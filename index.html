@@ -568,6 +568,9 @@
   <div class="nav-group-label">Budtender POS</div>
   <a class="nav-link" href="#" onclick="show('slotted-packing',this)"><span class="nav-dot"></span>Slotted Deliveries Packing</a>
   <a class="nav-link" href="#" onclick="show('linking-terminal',this)"><span class="nav-dot"></span>Linking a Terminal</a>
+  <a class="nav-link" href="#" onclick="show('configure-terminal',this)"><span class="nav-dot"></span>Configure a Terminal</a>
+  <a class="nav-link" href="#" onclick="show('drop-register',this)"><span class="nav-dot"></span>Dropping a Register</a>
+  <a class="nav-link" href="#" onclick="show('delete-register',this)"><span class="nav-dot"></span>Delete a Register</a>
   <a class="nav-link" href="#" onclick="show('customer-queue',this)"><span class="nav-dot"></span>Customer Queue</a>
   </div><!-- /nav-content -->
 </nav>
@@ -594,7 +597,7 @@
         <div class="cover-meta-item"><span class="cover-meta-label">Document</span><span class="cover-meta-value">Operations Handbook</span></div>
         <div class="cover-meta-item"><span class="cover-meta-label">Module</span><span class="cover-meta-value">Customers</span></div>
         <div class="cover-meta-item"><span class="cover-meta-label">Platform</span><span class="cover-meta-value">backoffice.omnigreen.ai</span></div>
-        <div class="cover-meta-item"><span class="cover-meta-label">SOPs</span><span class="cover-meta-value">31 Workflows</span></div>
+        <div class="cover-meta-item"><span class="cover-meta-label">SOPs</span><span class="cover-meta-value">34 Workflows</span></div>
       </div>
       <div class="cover-values">
         <div class="value-card"><div class="value-card-name">Accuracy</div></div>
@@ -696,6 +699,9 @@
     <div class="section-label">Budtender POS — SOPs 9, 15 & 16</div>
     <ul class="policy-list">
       <li><span class="list-bullet bullet-num">9</span><span><strong>Slotted Deliveries Packing Flow</strong> — Print label first (scan field is disabled until label is printed), scan product barcodes, delete any wrongly scanned items, then click Pack Order to advance to dispatch. Bulk Print Labels available for batch processing.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span><strong>Delete a Register</strong> — Permanently remove a register: Store Management &rarr; Registers &rarr; Menu &rarr; Delete Register &rarr; confirm Yes. This action is irreversible.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span><strong>Dropping a Register</strong> — Remove cash from a register mid-shift: Store Management &rarr; Registers &rarr; select the register &rarr; Drop &rarr; confirm the amount &rarr; Submit Drop.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span><strong>Configure a Terminal</strong> — Set up a new payment terminal: Store Management &rarr; Store Config &rarr; Merchant Terminal &rarr; New Terminal &rarr; fill all terminal details &rarr; toggle Enable &rarr; Save.</span></li>
       <li><span class="list-bullet bullet-num">15</span><span><strong>Linking a Terminal</strong> — Device Management → Settings → Link New Device → select terminal from dropdown → Link Device → confirm green success banner. Terminal must be powered on and on the correct network.</span></li>
       <li><span class="list-bullet bullet-num">16</span><span><strong>Customer Queue</strong> — Toggle Show Store Queue, search by first name, filter by Walk-in/Pickup/Return/Exchange, remove customers via the red icon (greyed out for customers already at a register), and add a customer by scanning the back of their CA Driver's License or other ID.</span></li>
     </ul>
@@ -3619,6 +3625,258 @@
   <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Customer Order Placement · E-Commerce</span></div>
 </div>
 
+<!-- ══════ CONFIGURE TERMINAL ══════ -->
+<div id="page-configure-terminal" class="page">
+  <div class="page-header page-header-pos">
+    <div class="page-eyebrow">Budtender POS</div>
+    <h2 class="page-title">Configure a Terminal</h2>
+    <p class="page-desc">How to set up a new payment terminal in Omnigreen Retail — from Store Management through entering terminal details, enabling, and saving the configuration.</p>
+  </div>
+  <div class="page-content">
+
+    <div class="highlight-box"><strong>What this does:</strong> Configuring a terminal registers a new payment device in the system under your store's merchant account. Once configured and enabled, the terminal can be linked to a POS station for use at checkout. See <strong>Linking a Terminal (SOP 15)</strong> for the next step after configuration.</div>
+
+    <div class="section-label">Step-by-Step</div>
+
+    <div class="policy-title">Step 1 — Store Management</div>
+    <p>Navigate to the <strong>Store Management</strong> section in the Backoffice left nav to begin configuring your payment terminal.</p>
+
+    <div class="policy-title">Step 2 — Store Config</div>
+    <p>Select <strong>"Store Config"</strong> to access your store's configuration settings.</p>
+
+    <div class="policy-title">Step 3 — Merchant Terminal</div>
+    <p>Open the <strong>"Merchant Terminal"</strong> tab to view and manage your store's payment terminals.</p>
+
+    <div class="policy-title">Step 4 — New Terminal</div>
+    <p>Click <strong>"New Terminal"</strong> to initiate the setup of a new payment terminal and open the terminal details form.</p>
+
+    <div class="policy-title">Step 5 — Enter All Terminal Details</div>
+    <p>Fill out <strong>all required terminal details</strong> in the form. Ensure all fields are completed accurately — terminal details typically include the device name, serial number, and any store-specific identifiers required by the merchant configuration.</p>
+    <div class="info-box"><p>Have the terminal's physical device information on hand before starting this step. Serial numbers and device IDs can usually be found on the back of the terminal hardware or in the device packaging.</p></div>
+
+    <div class="policy-title">Step 6 — Enable</div>
+    <p>Toggle the <strong>Enabled</strong> switch to activate the terminal. A terminal must be enabled before it can be used at the POS.</p>
+    <div class="amber-box"><p><strong>Don't forget to enable.</strong> A terminal that is saved but not toggled on will not appear as an available device at the POS station. Enable the toggle before saving.</p></div>
+
+    <div class="policy-title">Step 7 — Save</div>
+    <p>Click <strong>"Save"</strong> to complete the terminal setup. The terminal is now configured, enabled, and ready to be linked to a POS station.</p>
+    <div class="green-box"><p><strong>Terminal configured.</strong> The terminal now appears in your Merchant Terminal list. Use <strong>Linking a Terminal (SOP 15)</strong> to assign it to a POS station for checkout use.</p></div>
+
+    <div class="section-label">Quick Reference</div>
+    <div class="step-track">
+      <div class="step-block s1"><div class="step-block-num">Store</div><div class="step-block-name">Management</div></div>
+      <div class="step-block s2"><div class="step-block-num">Store</div><div class="step-block-name">Config</div></div>
+      <div class="step-block s3"><div class="step-block-num">Merchant</div><div class="step-block-name">Terminal</div></div>
+      <div class="step-block s4"><div class="step-block-num">New</div><div class="step-block-name">Terminal</div></div>
+      <div class="step-block s5"><div class="step-block-num">Fill</div><div class="step-block-name">Details</div></div>
+    </div>
+
+    <div class="section-label">Configure vs Link — What's the Difference?</div>
+    <div class="two-col">
+      <div class="mini-card">
+        <div class="mini-card-label">Configure (This SOP)</div>
+        <div class="mini-card-value">Registers the physical terminal device in the system under your store's merchant account. Done once per device.</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-card-label">Link (SOP 15)</div>
+        <div class="mini-card-value">Assigns the configured terminal to a specific POS station so budtenders can use it at checkout. Done per station.</div>
+      </div>
+    </div>
+
+    <div class="section-label">Key Rules</div>
+    <ul class="policy-list">
+      <li><span class="list-bullet bullet-check">&#10003;</span><span>Have the terminal's <strong>serial number and device ID</strong> ready before starting — found on the device or packaging.</span></li>
+      <li><span class="list-bullet bullet-check">&#10003;</span><span>Always <strong>toggle Enable</strong> before saving — a disabled terminal will not appear at the POS.</span></li>
+      <li><span class="list-bullet bullet-check">&#10003;</span><span>After saving, use <strong>Linking a Terminal (SOP 15)</strong> to assign the terminal to a POS station.</span></li>
+      <li><span class="list-bullet bullet-x">&#10005;</span><span>Do not configure a terminal without all required device information — incomplete entries cause pairing failures.</span></li>
+    </ul>
+
+    <div class="section-label">Video Walkthrough</div>
+    <a class="vguide-card" href="https://app.guidde.com/share/playbooks/kUNVYDxyVnLABNPyivRAy5" target="_blank" rel="noopener" style="max-width:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;">
+      <div class="vguide-thumb" style="background:#111;">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
+      </div>
+      <div class="vguide-body">
+        <div class="vguide-tag">Budtender POS &middot; Terminal Setup</div>
+        <div class="vguide-title">Configure a Terminal</div>
+        <div class="vguide-desc">Store Management &rarr; Store Config &rarr; Merchant Terminal &rarr; New Terminal &rarr; fill all details &rarr; toggle Enable &rarr; Save.</div>
+        <div class="vguide-steps">
+          <span class="vstep">1 Store Management</span>
+          <span class="vstep">2 Store Config</span>
+          <span class="vstep">3 Merchant Terminal</span>
+          <span class="vstep">4 New Terminal</span>
+          <span class="vstep">5 Fill Details</span>
+          <span class="vstep">6 Enable</span>
+          <span class="vstep">7 Save</span>
+        </div>
+        <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+    </a>
+
+  </div>
+  <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Configure a Terminal &middot; Budtender POS</span></div>
+</div>
+
+<!-- ══════ DROP REGISTER ══════ -->
+<div id="page-drop-register" class="page">
+  <div class="page-header page-header-pos">
+    <div class="page-eyebrow">Budtender POS</div>
+    <h2 class="page-title">Dropping a Register</h2>
+    <p class="page-desc">How to perform a register drop in Omnigreen Retail — removing cash from a specific register mid-shift via Store Management.</p>
+  </div>
+  <div class="page-content">
+
+    <div class="highlight-box"><strong>What is a register drop?</strong> A register drop removes accumulated cash from a register drawer mid-shift to reduce the amount of cash on hand. This is a standard loss-prevention practice — drops should be performed regularly or when the drawer reaches a set threshold.</div>
+
+    <div class="section-label">Step-by-Step</div>
+
+    <div class="policy-title">Step 1 — Store Management</div>
+    <p>Navigate to the <strong>Store Management</strong> section in the Backoffice to access your retail settings.</p>
+
+    <div class="policy-title">Step 2 — Registers</div>
+    <p>Select <strong>"Registers"</strong> to view all available cash registers at your location.</p>
+
+    <div class="policy-title">Step 3 — Select the Register</div>
+    <p>Locate the <strong>specific register</strong> you want to perform the drop on and open its details by clicking on it.</p>
+    <div class="info-box"><p>If your location has multiple registers, make sure you are selecting the correct one before initiating the drop. Register names or numbers are displayed in the list.</p></div>
+
+    <div class="policy-title">Step 4 — Drop</div>
+    <p>Initiate the drop process by selecting the <strong>"Drop"</strong> option on the chosen register's detail view.</p>
+
+    <div class="policy-title">Step 5 — Confirm Drop Amount</div>
+    <p>Review and confirm the <strong>drop amount</strong> and any relevant details. Ensure the amount accurately reflects the cash being removed from the drawer.</p>
+    <div class="alert-box">
+      <div class="alert-box-title">&#9888; Verify Before Submitting</div>
+      <p>Double-check the drop amount before confirming. Incorrect drop amounts create reconciliation discrepancies at end of shift. Count the cash being dropped and match it to the amount entered.</p>
+    </div>
+
+    <div class="policy-title">Step 6 — Submit Drop</div>
+    <p>Click <strong>"Submit Drop"</strong> to finalize the process. The drop is recorded in the system and the register's cash balance is updated.</p>
+    <div class="green-box"><p><strong>Drop complete.</strong> The register drop is logged with a timestamp. Place the dropped cash in the designated safe or secure location per your location's cash handling policy.</p></div>
+
+    <div class="section-label">Quick Reference</div>
+    <div class="step-track">
+      <div class="step-block s1"><div class="step-block-num">Store</div><div class="step-block-name">Management</div></div>
+      <div class="step-block s2"><div class="step-block-num">Registers</div><div class="step-block-name">Select</div></div>
+      <div class="step-block s3"><div class="step-block-num">Open</div><div class="step-block-name">Register</div></div>
+      <div class="step-block s4"><div class="step-block-num">Drop</div><div class="step-block-name">Initiate</div></div>
+      <div class="step-block s5"><div class="step-block-num">Submit</div><div class="step-block-name">Drop</div></div>
+    </div>
+
+    <div class="section-label">Key Rules</div>
+    <ul class="policy-list">
+      <li><span class="list-bullet bullet-check">&#10003;</span><span><strong>Count the cash first</strong> — verify the physical amount matches what you enter before submitting.</span></li>
+      <li><span class="list-bullet bullet-check">&#10003;</span><span>Select the <strong>correct register</strong> — double-check the register name or number before initiating.</span></li>
+      <li><span class="list-bullet bullet-check">&#10003;</span><span>Place dropped cash in the <strong>designated safe or secure location</strong> immediately after submission.</span></li>
+      <li><span class="list-bullet bullet-x">&#10005;</span><span>Do not submit a drop with an <strong>unverified or estimated amount</strong> — this creates end-of-shift reconciliation errors.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>Drop frequency and thresholds are set by your location's manager — follow your location's specific cash handling policy.</span></li>
+    </ul>
+
+    <div class="section-label">Video Walkthrough</div>
+    <a class="vguide-card" href="https://app.guidde.com/share/playbooks/rwGqEWqAHhP23UgBDLi81P" target="_blank" rel="noopener" style="max-width:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;">
+      <div class="vguide-thumb" style="background:#111;">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
+      </div>
+      <div class="vguide-body">
+        <div class="vguide-tag">Budtender POS &middot; Cash Management</div>
+        <div class="vguide-title">Dropping a Register</div>
+        <div class="vguide-desc">Store Management &rarr; Registers &rarr; select register &rarr; Drop &rarr; verify amount &rarr; Submit Drop.</div>
+        <div class="vguide-steps">
+          <span class="vstep">1 Store Management</span>
+          <span class="vstep">2 Registers</span>
+          <span class="vstep">3 Select Register</span>
+          <span class="vstep">4 Drop</span>
+          <span class="vstep">5 Verify Amount</span>
+          <span class="vstep">6 Submit Drop</span>
+        </div>
+        <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+    </a>
+
+  </div>
+  <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Dropping a Register &middot; Budtender POS</span></div>
+</div>
+
+<!-- ══════ DELETE REGISTER ══════ -->
+<div id="page-delete-register" class="page">
+  <div class="page-header page-header-pos">
+    <div class="page-eyebrow">Budtender POS</div>
+    <h2 class="page-title">Delete a Register</h2>
+    <p class="page-desc">How to permanently remove a register from Omnigreen Retail — navigate to Registers, open the menu, and confirm deletion.</p>
+  </div>
+  <div class="page-content">
+
+    <div class="non-neg-strip">
+      <div class="non-neg-strip-title">&#9888; Deletion is Permanent</div>
+      <div class="non-neg-item"><div class="non-neg-icon">!</div>Deleting a register <strong>cannot be undone.</strong> The register and its configuration will be permanently removed from the system.</div>
+      <div class="non-neg-item"><div class="non-neg-icon">!</div>Ensure the register is <strong>not actively in use</strong> and has a <strong>zero balance</strong> before deleting.</div>
+      <div class="non-neg-item"><div class="non-neg-icon">!</div>Confirm with a manager before deleting any register — do not delete without authorization.</div>
+    </div>
+
+    <div class="section-label">Step-by-Step</div>
+
+    <div class="policy-title">Step 1 — Registers</div>
+    <p>Navigate to <strong>Store Management &rarr; Registers</strong> to access the full list of available registers at your location.</p>
+
+    <div class="policy-title">Step 2 — Open the Menu</div>
+    <p>Locate the register you want to remove and open its <strong>Menu</strong> to reveal the additional options available for that register.</p>
+
+    <div class="policy-title">Step 3 — Delete Register</div>
+    <p>Select <strong>"Delete Register"</strong> from the menu to initiate the removal process for the chosen register.</p>
+
+    <div class="policy-title">Step 4 — Confirm</div>
+    <p>A confirmation prompt appears. Choose:</p>
+    <div class="two-col">
+      <div class="mini-card">
+        <div class="mini-card-label" style="color:#EF4444;">Yes — Delete</div>
+        <div class="mini-card-value">Permanently deletes the register. This action cannot be undone.</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-card-label">No — Cancel</div>
+        <div class="mini-card-value">Cancels the action and returns to the Registers list with no changes made.</div>
+      </div>
+    </div>
+
+    <div class="section-label">Quick Reference</div>
+    <div class="step-track">
+      <div class="step-block s1"><div class="step-block-num">Store</div><div class="step-block-name">Management</div></div>
+      <div class="step-block s2"><div class="step-block-num">Registers</div><div class="step-block-name">Select</div></div>
+      <div class="step-block s3"><div class="step-block-num">Menu</div><div class="step-block-name">Open</div></div>
+      <div class="step-block s4"><div class="step-block-num">Delete</div><div class="step-block-name">Register</div></div>
+      <div class="step-block s5"><div class="step-block-num">Yes</div><div class="step-block-name">Confirm</div></div>
+    </div>
+
+    <div class="section-label">Key Rules</div>
+    <ul class="policy-list">
+      <li><span class="list-bullet bullet-x">&#10005;</span><span><strong>Never delete</strong> a register without manager authorization — this is an irreversible action.</span></li>
+      <li><span class="list-bullet bullet-x">&#10005;</span><span>Do not delete a register that is <strong>currently in use</strong> or has an <strong>outstanding balance.</strong></span></li>
+      <li><span class="list-bullet bullet-check">&#10003;</span><span>If you selected Delete by mistake, click <strong>No</strong> on the confirmation prompt to cancel safely.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>To add a new register after deletion, a manager or admin will need to reconfigure it from scratch via Store Config.</span></li>
+    </ul>
+
+    <div class="section-label">Video Walkthrough</div>
+    <a class="vguide-card" href="https://app.guidde.com/share/playbooks/6XEsao1xt4prbfV9fBCQFH" target="_blank" rel="noopener" style="max-width:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;">
+      <div class="vguide-thumb" style="background:#111;">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
+      </div>
+      <div class="vguide-body">
+        <div class="vguide-tag">Budtender POS &middot; Register Management</div>
+        <div class="vguide-title">Delete a Register</div>
+        <div class="vguide-desc">Registers &rarr; Menu &rarr; Delete Register &rarr; Yes to confirm. Permanent and irreversible — requires manager authorization.</div>
+        <div class="vguide-steps">
+          <span class="vstep">1 Registers</span>
+          <span class="vstep">2 Menu</span>
+          <span class="vstep">3 Delete Register</span>
+          <span class="vstep">4 Confirm Yes</span>
+        </div>
+        <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+    </a>
+
+  </div>
+  <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Delete a Register &middot; Budtender POS</span></div>
+</div>
+
 <!-- ══════ TRAINING VIDEOS ══════ -->
 <div id="page-training-videos" class="page">
   <div class="page-header page-header-pos">
@@ -3971,9 +4229,9 @@
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
           <div class="vguide-body">
-            <div class="vguide-tag">Backoffice · Register</div>
-            <div class="vguide-title">Retail: Configure a Payomni Terminal</div>
-            <div class="vguide-desc">Set up and configure a Payomni payment terminal for retail.</div>
+            <div class="vguide-tag">Budtender POS · Terminal Setup</div>
+            <div class="vguide-title">Configure a Terminal</div>
+            <div class="vguide-desc">Store Management → Store Config → Merchant Terminal → New Terminal → fill details → toggle Enable → Save.</div>
             
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
@@ -4746,6 +5004,21 @@ const SEARCH_INDEX = [
     id: 'customer-queue', section: 'Budtender POS', title: 'Customer Queue',
     keywords: 'customer queue show store queue toggle walk-in pickup return exchange filter remove customer red icon reason yes remove customer add customer ID scan California drivers license back of ID register queue line manual search first name',
     snippets: ['Navigate the customer queue — toggle, filter by Walk-in/Pickup/Return, remove with reason','Scan back of CA Driver\'s License to instantly pull up customer on a register']
+  },
+  {
+    id: 'delete-register', section: 'Budtender POS', title: 'Delete a Register',
+    keywords: 'delete register remove register store management registers menu confirm yes no permanent irreversible register management',
+    snippets: ['Registers → Menu → Delete Register → Yes to confirm. Permanent — requires manager authorization before proceeding','Click No on the confirmation prompt to cancel safely if Delete was selected by mistake']
+  },
+  {
+    id: 'drop-register', section: 'Budtender POS', title: 'Dropping a Register',
+    keywords: 'drop register register drop cash management store management registers submit drop cash drawer mid-shift loss prevention reconciliation cash handling',
+    snippets: ['Store Management → Registers → select register → Drop → verify amount → Submit Drop','Count cash before submitting — incorrect drop amounts cause end-of-shift reconciliation discrepancies']
+  },
+  {
+    id: 'configure-terminal', section: 'Budtender POS', title: 'Configure a Terminal',
+    keywords: 'configure terminal store management store config merchant terminal new terminal enable save payment terminal POS device serial number setup retail',
+    snippets: ['Store Management → Store Config → Merchant Terminal → New Terminal → fill details → toggle Enable → Save','Must toggle Enable before saving — disabled terminals do not appear at the POS station']
   },
   {
     id: 'linking-terminal', section: 'Budtender POS', title: 'Linking a Terminal',
