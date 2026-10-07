@@ -532,6 +532,9 @@
 
   <div class="nav-group-label">Tote & Inventory</div>
   <a class="nav-link" href="#" onclick="show('tote-reconciliation',this)"><span class="nav-dot"></span>Tote Reconciliation</a>
+  <a class="nav-link" href="#" onclick="show('bin-restore',this)"><span class="nav-dot"></span>Bin Management: Restore Unit</a>
+  <a class="nav-link" href="#" onclick="show('bin-restore',this)"><span class="nav-dot"></span>Bin Management: Restore Unit
+  <div class="nav-group-label"><span class="nav-dot"></span>Tote Reconciliation</a>
 
   <div class="nav-group-label">Driver App</div>
   <a class="nav-link" href="#" onclick="show('driver-app',this)"><span class="nav-dot"></span>Credits, Ratings & On Hold</a>
@@ -599,7 +602,7 @@
         <div class="cover-meta-item"><span class="cover-meta-label">Document</span><span class="cover-meta-value">Operations Handbook</span></div>
         <div class="cover-meta-item"><span class="cover-meta-label">Module</span><span class="cover-meta-value">Customers</span></div>
         <div class="cover-meta-item"><span class="cover-meta-label">Platform</span><span class="cover-meta-value">backoffice.omnigreen.ai</span></div>
-        <div class="cover-meta-item"><span class="cover-meta-label">SOPs</span><span class="cover-meta-value">36 Workflows</span></div>
+        <div class="cover-meta-item"><span class="cover-meta-label">SOPs</span><span class="cover-meta-value">37 Workflows</span></div>
       </div>
       <div class="cover-values">
         <div class="value-card"><div class="value-card-name">Accuracy</div></div>
@@ -660,6 +663,7 @@
 
     <div class="section-label">Tote & Inventory — SOP 7</div>
     <ul class="policy-list">
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span><strong>Bin Management: Restore Unit (Into MP)</strong> — Restore a scanned unit back into a Master Pack: Bin Management &rarr; Restore Units &rarr; Start Restore &rarr; scan Master Pack label &rarr; scan unit barcode &rarr; confirm &rarr; success banner confirms restoration.</span></li>
       <li><span class="list-bullet bullet-num">7</span><span><strong>Tote Reconciliation</strong> — 4-step process: (1) Reconcile — visually verify quantities and Commit all adjustments, (2) Pull Out — scan flagged items until 100%, (3) Replenish — scan pick list items until 100%, (4) Final Review — confirm tote code and click Complete. Includes Guidde video walkthrough.</span></li>
     </ul>
 
@@ -1241,6 +1245,85 @@
     </a>
 
     <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Customer Verification: Approve or Deny</span></div>
+</div>
+
+<!-- ══════ BIN RESTORE ══════ -->
+<div id="page-bin-restore" class="page">
+  <div class="page-header page-header-inventory">
+    <div class="page-eyebrow">Tote & Inventory</div>
+    <h2 class="page-title">Bin Management: Restore Unit (Into MP)</h2>
+    <p class="page-desc">How to restore a unit back into a Master Pack using Bin Management — scan the Master Pack label, scan the unit barcode, and confirm the restoration.</p>
+  </div>
+  <div class="page-content">
+
+    <div class="highlight-box"><strong>What this does:</strong> The Restore Unit flow returns a previously removed unit back into its Master Pack (MP) in the inventory system. Both the Master Pack label and the unit barcode must be scanned to complete the restoration.</div>
+
+    <div class="section-label">Step-by-Step</div>
+
+    <div class="policy-title">Step 1 — Bin Management</div>
+    <p>Click on the <strong>Bin Management</strong> tab in the Backoffice left nav.</p>
+
+    <div class="policy-title">Step 2 — Restore Units</div>
+    <p>Select <strong>"Restore Units"</strong> from the Bin Management dropdown menu.</p>
+
+    <div class="policy-title">Step 3 — Start Restore</div>
+    <p>Click <strong>"Start Restore"</strong> to initiate the restoration process and open the scan interface.</p>
+
+    <div class="policy-title">Step 4 — Scan Master Pack Label</div>
+    <p>Scan in the <strong>Master Pack (MP) label</strong> of the pack you are restoring the unit into. The system will identify the target Master Pack and prepare for the unit scan.</p>
+    <div class="info-box"><p>Have the physical Master Pack and the unit to be restored both on hand before scanning. Scanning the wrong Master Pack will associate the unit with the incorrect inventory record.</p></div>
+
+    <div class="policy-title">Step 5 — Scan Unit Barcode</div>
+    <p>Scan the <strong>unit barcode</strong> of the item being restored into the Master Pack.</p>
+
+    <div class="policy-title">Step 6 — Confirm</div>
+    <p>When ready to confirm, click the <strong>arrow (→)</strong> to submit the restoration.</p>
+
+    <div class="policy-title">Step 7 — Unit Restored</div>
+    <p>A <strong>confirmation banner</strong> will appear indicating the item was successfully restored. The unit is now back in the Master Pack in the inventory system.</p>
+    <div class="green-box"><p><strong>Restoration complete.</strong> The unit is now linked back to its Master Pack in Bin Management. The inventory record updates automatically.</p></div>
+
+    <div class="section-label">Quick Reference</div>
+    <div class="step-track">
+      <div class="step-block s1"><div class="step-block-num">Bin</div><div class="step-block-name">Management</div></div>
+      <div class="step-block s2"><div class="step-block-num">Restore</div><div class="step-block-name">Units</div></div>
+      <div class="step-block s3"><div class="step-block-num">Start</div><div class="step-block-name">Restore</div></div>
+      <div class="step-block s4"><div class="step-block-num">Scan MP</div><div class="step-block-name">Label</div></div>
+      <div class="step-block s5"><div class="step-block-num">Scan</div><div class="step-block-name">Unit Barcode</div></div>
+    </div>
+
+    <div class="section-label">Key Rules</div>
+    <ul class="policy-list">
+      <li><span class="list-bullet bullet-check">&#10003;</span><span>Have <strong>both</strong> the Master Pack and the unit physically present before starting the scan flow.</span></li>
+      <li><span class="list-bullet bullet-check">&#10003;</span><span>Confirm the <strong>success banner</strong> appears before setting the item down — no banner means the restoration did not complete.</span></li>
+      <li><span class="list-bullet bullet-x">&#10005;</span><span>Do not scan a unit into the <strong>wrong Master Pack</strong> — this creates inventory discrepancies that require manual correction.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>If the confirmation banner does not appear, do not assume success — retry the scan or escalate to a manager.</span></li>
+    </ul>
+
+    <div class="section-label">Video Walkthrough</div>
+    <a class="vguide-card" href="https://app.guidde.com/share/playbooks/u7835ykhwJqWnc1o9yik2c" target="_blank" rel="noopener" style="max-width:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;">
+      <div class="vguide-thumb" style="background:#111;">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
+      </div>
+      <div class="vguide-body">
+        <div class="vguide-tag">Backoffice &middot; Inventory</div>
+        <div class="vguide-title">Bin Management: Restore Unit (Into MP)</div>
+        <div class="vguide-desc">Bin Management &rarr; Restore Units &rarr; Start Restore &rarr; scan Master Pack label &rarr; scan unit barcode &rarr; confirm &rarr; success banner.</div>
+        <div class="vguide-steps">
+          <span class="vstep">1 Bin Management</span>
+          <span class="vstep">2 Restore Units</span>
+          <span class="vstep">3 Start Restore</span>
+          <span class="vstep">4 Scan MP Label</span>
+          <span class="vstep">5 Scan Unit</span>
+          <span class="vstep">6 Confirm</span>
+          <span class="vstep">7 Banner</span>
+        </div>
+        <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+    </a>
+
+  </div>
+  <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Bin Management: Restore Unit &middot; Tote &amp; Inventory</span></div>
 </div>
 
 <!-- ══════ TOTE RECONCILIATION ══════ -->
@@ -4581,7 +4664,7 @@
         <span class="video-category-count">5 guides</span>
       </div>
       <div class="vguide-grid">
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/ro4kaGz2bjgu8dKx86zaaV" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/u7835ykhwJqWnc1o9yik2c" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
@@ -4593,30 +4676,8 @@
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/jaCrQCSmb8asXrmw7CyyuY" target="_blank" rel="noopener">
-          <div class="vguide-thumb" style="background:#111;">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
-          </div>
-          <div class="vguide-body">
-            <div class="vguide-tag">Backoffice · Inventory</div>
-            <div class="vguide-title">Bin Management: Master Pack Unit Audit</div>
-            <div class="vguide-desc">Run a unit audit on a Master Pack in Bin Management.</div>
-            
-            <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          </div>
-        </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/pPi2im5sapWkh2fqHVkpkg" target="_blank" rel="noopener">
-          <div class="vguide-thumb" style="background:#111;">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
-          </div>
-          <div class="vguide-body">
-            <div class="vguide-tag">Backoffice · Inventory</div>
-            <div class="vguide-title">DQRTS: Receive, Room Transfers & Bin Audit</div>
-            <div class="vguide-desc">How to receive inventory, perform room transfers, and run a bin audit.</div>
-            
-            <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          </div>
-        </a>
+
+
         <a class="vguide-card" href="https://app.guidde.com/share/playbooks/sXFvHb6w17CRfB9exy3Chu" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
@@ -5169,6 +5230,11 @@ const SEARCH_INDEX = [
     id: 'verification', section: 'Compliance', title: 'Customer Verification: Approve or Deny',
     keywords: 'verification medical approve deny MMIC card expiry name match ID customer verification delivery management dispatch pending approved rejected',
     snippets: ['Verify medical documents during dispatch','Name must match account — expired cards must be denied']
+  },
+  {
+    id: 'bin-restore', section: 'Tote & Inventory', title: 'Bin Management: Restore Unit (Into MP)',
+    keywords: 'bin management restore unit master pack MP scan barcode label start restore confirm inventory backoffice restoration unit barcode',
+    snippets: ['Bin Management → Restore Units → Start Restore → scan Master Pack label → scan unit barcode → confirm → success banner','Success banner must appear to confirm restoration completed — retry if no banner shows']
   },
   {
     id: 'tote-reconciliation', section: 'Tote & Inventory', title: 'Tote Reconciliation',
