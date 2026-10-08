@@ -632,6 +632,10 @@
   <div class="nav-section collapsed" id="ns-driver">
     <a class="nav-link" href="#" onclick="show('driver-app',this)"><span class="nav-dot"></span>Credits, Ratings &amp; On Hold</a>
     <a class="nav-link" href="#" onclick="show('driver-app',this)"><span class="nav-dot"></span>Order Queue &amp; Notes</a>
+    <a class="nav-link" href="#" onclick="show('driver-new-user',this)"><span class="nav-dot"></span>(New User) Register &amp; Start Shift</a>
+    <a class="nav-link" href="#" onclick="show('driver-existing-user',this)"><span class="nav-dot"></span>(Existing User) Login &amp; Start Shift</a>
+    <a class="nav-link" href="#" onclick="show('driver-receive-pack',this)"><span class="nav-dot"></span>Process: Receive &amp; Pack Order</a>
+    <a class="nav-link" href="#" onclick="show('driver-route-hub',this)"><span class="nav-dot"></span>Route to Hub (End Shift)</a>
   </div>
 
   <div class="nav-group-label collapsed" onclick="toggleSection('ns-admin',this)">Admin &amp; Configuration<span class="nav-chevron">▾</span></div>
@@ -684,6 +688,7 @@
     <a class="nav-link" href="#" onclick="show('drop-register',this)"><span class="nav-dot"></span>Dropping a Register</a>
     <a class="nav-link" href="#" onclick="show('delete-register',this)"><span class="nav-dot"></span>Delete a Register</a>
     <a class="nav-link" href="#" onclick="show('customer-queue',this)"><span class="nav-dot"></span>Customer Queue</a>
+    <a class="nav-link" href="#" onclick="show('weedmaps-pickup',this)"><span class="nav-dot"></span>Weedmaps Pickup</a>
     <a class="nav-link" href="#" onclick="show('configure-printer',this)"><span class="nav-dot"></span>Configure Printer</a>
     <a class="nav-link" href="#" onclick="show('return',this)"><span class="nav-dot"></span>Return</a>
     <a class="nav-link" href="#" onclick="show('exchange',this)"><span class="nav-dot"></span>Exchange</a>
@@ -732,6 +737,10 @@
     </optgroup>
     <optgroup label="— Driver App —">
       <option value="driver-app">Credits, Ratings &amp; On Hold / Order Queue</option>
+      <option value="driver-new-user">(New User) Register, Login &amp; Start Shift</option>
+      <option value="driver-existing-user">(Existing User) Login &amp; Start Shift</option>
+      <option value="driver-receive-pack">Process: Receive &amp; Pack Order</option>
+      <option value="driver-route-hub">Route to Hub (End Shift)</option>
     </optgroup>
     <optgroup label="— Admin &amp; Configuration —">
       <option value="user-permissions">User Permissions</option>
@@ -768,6 +777,7 @@
       <option value="drop-register">Dropping a Register</option>
       <option value="delete-register">Delete a Register</option>
       <option value="customer-queue">Customer Queue</option>
+      <option value="weedmaps-pickup">Complete Weedmaps Pickup Order</option>
       <option value="configure-printer">Configure Printer</option>
       <option value="return">Return</option>
       <option value="exchange">Exchange</option>
@@ -873,54 +883,59 @@
       <li><span class="list-bullet bullet-num">17</span><span><strong>Tote Reconciliation</strong> — 4-step process: (1) Reconcile — visually verify quantities and Commit all adjustments, (2) Pull Out — scan flagged items until 100%, (3) Replenish — scan pick list items until 100%, (4) Final Review — confirm tote code and click Complete. Includes Guidde video walkthrough.</span></li>
     </ul>
 
-    <div class="section-label">Driver App — SOP 18</div>
+    <div class="section-label">Driver App — SOPs 18–22</div>
     <ul class="policy-list">
       <li><span class="list-bullet bullet-num">18</span><span><strong>Credits, Ratings, On Hold, Order Queue & Notes</strong> — Give customer credits on a current order (Maximum vs Total Available), rate customers after delivery (1–2 stars require notes), put an order on hold with a documented reason, read Order Queue status tags (Upcoming/Delivered/On Hold/Cancelled), and access Customer Notes from the Profile tab.</span></li>
+      <li><span class="list-bullet bullet-num">19</span><span><strong>(New User) Register, Login & Start Shift</strong> — Register a new driver using the Operator code, mobile number, and invite code. Clock in to an assigned shift slot, go online after inventory is assigned, then swipe to accept the first order.</span></li>
+      <li><span class="list-bullet bullet-num">20</span><span><strong>(Existing User) Login & Start Shift</strong> — Log in with auto-populated credentials, regenerate and enter your OTP, clock in to your assigned shift, go online, and accept your first routed order.</span></li>
+      <li><span class="list-bullet bullet-num">21</span><span><strong>Process: Receive & Pack Order</strong> — Accept the incoming order, review order info and customer profile (ID, selfie, medical rec), view items, select the correct exit bag, scan or type each Master Pack number to pack the tote, click Successfully Packed, then swipe to complete delivery within 100 feet of the address.</span></li>
+      <li><span class="list-bullet bullet-num">22</span><span><strong>Route to Hub (End Shift)</strong> — When the shift ends, drivers are prompted to RTH with the cash owed displayed. Upon arriving at the hub and returning cash and totes, swipe right to clock out of the app.</span></li>
     </ul>
 
-    <div class="section-label">Automated Customer Service — SOP 19</div>
+    <div class="section-label">Automated Customer Service — SOP 23</div>
     <ul class="policy-list">
-      <li><span class="list-bullet bullet-num">19</span><span><strong>ACS Overview & Rules</strong> — How the automated self-service system works: access points (Order Confirmation + My Orders), 24-hour trigger window, issue categories (Product/Driver/Other), customer scoring (Fraudster ≤6.99 vs Default 7–15.99), all 8 Rule_Configs (refund%, bonus, tax, waive delivery, etc.), score deduction table (−1 to −40 for consecutive submissions), and Backoffice Report → ACS Resolution view.</span></li>
-    <div class="section-label">Admin & Configuration — SOPs 20–22</div>
+      <li><span class="list-bullet bullet-num">23</span><span><strong>ACS Overview & Rules</strong> — How the automated self-service system works: access points (Order Confirmation + My Orders), 24-hour trigger window, issue categories (Product/Driver/Other), customer scoring (Fraudster ≤6.99 vs Default 7–15.99), all 8 Rule_Configs (refund%, bonus, tax, waive delivery, etc.), score deduction table (−1 to −40 for consecutive submissions), and Backoffice Report → ACS Resolution view.</span></li>
+    <div class="section-label">Admin & Configuration — SOPs 24–26</div>
     <ul class="policy-list">
-      <li><span class="list-bullet bullet-num">20</span><span><strong>New Users (Invite)</strong> — Invite a new user: Admin &rarr; Users &rarr; Invite New User &rarr; fill data &rarr; select role and location(s) &rarr; Save Changes triggers the invitation email. User registers via emailed link. Manage existing users with filters and enable/disable via action menu.</span></li>
-      <li><span class="list-bullet bullet-num">21</span><span><strong>Set &amp; Reset User PIN</strong> — Set or change your 4-digit PIN via Backoffice Settings &rarr; New PIN &rarr; Confirm &rarr; Update PIN. Forgotten PIN: use the Budtender POS app &rarr; Forgot your PIN &rarr; enter and confirm new PIN &rarr; Reset PIN.</span></li>
-      <li><span class="list-bullet bullet-num">22</span><span><strong>User Permissions</strong> — Navigate Admin &rarr; Users to find and manage individual user permissions. Set access by E-Comm store, store location, and hub. Assign No Access, View Only, or View-Edit per permission, then Update and confirm.</span></li>
+      <li><span class="list-bullet bullet-num">24</span><span><strong>New Users (Invite)</strong> — Invite a new user: Admin &rarr; Users &rarr; Invite New User &rarr; fill data &rarr; select role and location(s) &rarr; Save Changes triggers the invitation email. User registers via emailed link. Manage existing users with filters and enable/disable via action menu.</span></li>
+      <li><span class="list-bullet bullet-num">25</span><span><strong>Set &amp; Reset User PIN</strong> — Set or change your 4-digit PIN via Backoffice Settings &rarr; New PIN &rarr; Confirm &rarr; Update PIN. Forgotten PIN: use the Budtender POS app &rarr; Forgot your PIN &rarr; enter and confirm new PIN &rarr; Reset PIN.</span></li>
+      <li><span class="list-bullet bullet-num">26</span><span><strong>User Permissions</strong> — Navigate Admin &rarr; Users to find and manage individual user permissions. Set access by E-Comm store, store location, and hub. Assign No Access, View Only, or View-Edit per permission, then Update and confirm.</span></li>
     </ul>
 
-    <div class="section-label">Reports — SOP 23</div>
+    <div class="section-label">Reports — SOP 27</div>
     <ul class="policy-list">
-      <li><span class="list-bullet bullet-num">23</span><span><strong>Orders Look Up</strong> — Navigate Report &rarr; Orders to search the live order report by Order ID, customer name, or customer ID. Filter by creation timeframe or scheduled order window, then click Apply to generate results. Use Configure to adjust displayed columns.</span></li>
+      <li><span class="list-bullet bullet-num">27</span><span><strong>Orders Look Up</strong> — Navigate Report &rarr; Orders to search the live order report by Order ID, customer name, or customer ID. Filter by creation timeframe or scheduled order window, then click Apply to generate results. Use Configure to adjust displayed columns.</span></li>
     </ul>
 
-    <div class="section-label">Products & E-Commerce — SOPs 24–25</div>
+    <div class="section-label">Products & E-Commerce — SOPs 28–29</div>
     <ul class="policy-list">
-      <li><span class="list-bullet bullet-num">24</span><span><strong>Creating Categories & Subcategories</strong> — Create product categories in /product-configuration, pin subcategories, and build SEO category pages in /shop-category. Slug sets the URL and cannot be changed after save. Covers banner uploads, architecture best practices (broad categories → subcategories → Web Merch for granular grouping).</span></li>
-      <li><span class="list-bullet bullet-num">25</span><span><strong>Customer Order Placement (E-Comm)</strong> — How a customer places an order through the e-commerce site: sign in with phone verification, select items, add to cart, checkout, choose payment method (Cash, Debit in person, or Stronghold online), and receive order confirmation.</span></li>
+      <li><span class="list-bullet bullet-num">28</span><span><strong>Creating Categories & Subcategories</strong> — Create product categories in /product-configuration, pin subcategories, and build SEO category pages in /shop-category. Slug sets the URL and cannot be changed after save. Covers banner uploads, architecture best practices (broad categories → subcategories → Web Merch for granular grouping).</span></li>
+      <li><span class="list-bullet bullet-num">29</span><span><strong>Customer Order Placement (E-Comm)</strong> — How a customer places an order through the e-commerce site: sign in with phone verification, select items, add to cart, checkout, choose payment method (Cash, Debit in person, or Stronghold online), and receive order confirmation.</span></li>
     </ul>
 
-    <div class="section-label">Welcome App — SOPs 26–30</div>
+    <div class="section-label">Welcome App — SOPs 30–34</div>
     <ul class="policy-list">
-      <li><span class="list-bullet bullet-num">26</span><span><strong>Adding a Flag to a Customer Profile</strong> — Flag a customer for Destruction of Property, Theft, Unlawful Distribution, Violence, or Other. Requires description, priority level, and confirmation. View full Flag History from the customer profile.</span></li>
-      <li><span class="list-bullet bullet-num">27</span><span><strong>Log-in & Check-in Flow</strong> — Log in to the Welcome App at welcome.omnigreen.ai, review the queue, add a client from search, and scan their ID (Driver License, California ID, or Other) to complete check-in.</span></li>
-      <li><span class="list-bullet bullet-num">28</span><span><strong>Customer: Look Up, Add & Remove</strong> — Add a customer by scanning their ID (DL, CA ID, Passport, International), select purpose of visit (Walk-in/Pickup/Return/Exchange), check in, search by name, and remove from queue with a documented reason.</span></li>
-      <li><span class="list-bullet bullet-num">29</span><span><strong>Adding/Editing Medical Info</strong> — Access Profile Details → Update Profile → toggle Medical Customer ON → select medical type → enter Medical ID number and expiration date → click Update Profile to save. Do not approve expired documents.</span></li>
-      <li><span class="list-bullet bullet-num">30</span><span><strong>Edit Customer Profile</strong> — Access a customer's profile tab, click Update Profile, edit fields (phone, email, first/last name, gender, date of birth), and save by clicking Update Profile.</span></li>
+      <li><span class="list-bullet bullet-num">30</span><span><strong>Adding a Flag to a Customer Profile</strong> — Flag a customer for Destruction of Property, Theft, Unlawful Distribution, Violence, or Other. Requires description, priority level, and confirmation. View full Flag History from the customer profile.</span></li>
+      <li><span class="list-bullet bullet-num">31</span><span><strong>Log-in & Check-in Flow</strong> — Log in to the Welcome App at welcome.omnigreen.ai, review the queue, add a client from search, and scan their ID (Driver License, California ID, or Other) to complete check-in.</span></li>
+      <li><span class="list-bullet bullet-num">32</span><span><strong>Customer: Look Up, Add & Remove</strong> — Add a customer by scanning their ID (DL, CA ID, Passport, International), select purpose of visit (Walk-in/Pickup/Return/Exchange), check in, search by name, and remove from queue with a documented reason.</span></li>
+      <li><span class="list-bullet bullet-num">33</span><span><strong>Adding/Editing Medical Info</strong> — Access Profile Details → Update Profile → toggle Medical Customer ON → select medical type → enter Medical ID number and expiration date → click Update Profile to save. Do not approve expired documents.</span></li>
+      <li><span class="list-bullet bullet-num">34</span><span><strong>Edit Customer Profile</strong> — Access a customer's profile tab, click Update Profile, edit fields (phone, email, first/last name, gender, date of birth), and save by clicking Update Profile.</span></li>
     </ul>
 
-    <div class="section-label">Budtender POS — SOPs 31–41</div>
+    <div class="section-label">Budtender POS — SOPs 35–46</div>
     <ul class="policy-list">
-      <li><span class="list-bullet bullet-num">31</span><span><strong>Slotted Deliveries Packing Flow</strong> — Print label first (scan field is disabled until label is printed), scan product barcodes, delete any wrongly scanned items, then click Pack Order to advance to dispatch. Bulk Print Labels available for batch processing.</span></li>
-      <li><span class="list-bullet bullet-num">32</span><span><strong>Delete a Register</strong> — Permanently remove a register: Store Management &rarr; Registers &rarr; Menu &rarr; Delete Register &rarr; confirm Yes. This action is irreversible.</span></li>
-      <li><span class="list-bullet bullet-num">33</span><span><strong>Create a Register</strong> — Set up a new register: Store Management &rarr; Registers &rarr; New Register &rarr; fill in Register Name, Room, Terminal Name/ID, and min/max balance thresholds &rarr; Create Register.</span></li>
-      <li><span class="list-bullet bullet-num">34</span><span><strong>Open a Register &amp; Assign to Budtender</strong> — Open a register for a shift: Store Management &rarr; Registers &rarr; Open Register &rarr; assign users &rarr; fill required info &rarr; enter Manager PIN to authorize.</span></li>
-      <li><span class="list-bullet bullet-num">35</span><span><strong>Dropping a Register</strong> — Remove cash from a register mid-shift: Store Management &rarr; Registers &rarr; select the register &rarr; Drop &rarr; confirm the amount &rarr; Submit Drop.</span></li>
-      <li><span class="list-bullet bullet-num">36</span><span><strong>Configure a Terminal</strong> — Set up a new payment terminal: Store Management &rarr; Store Config &rarr; Merchant Terminal &rarr; New Terminal &rarr; fill all terminal details &rarr; toggle Enable &rarr; Save.</span></li>
-      <li><span class="list-bullet bullet-num">37</span><span><strong>Linking a Terminal</strong> — Device Management → Settings → Link New Device → select terminal from dropdown → Link Device → confirm green success banner. Terminal must be powered on and on the correct network.</span></li>
-      <li><span class="list-bullet bullet-num">38</span><span><strong>Customer Queue</strong> — Toggle Show Store Queue, search by first name, filter by Walk-in/Pickup/Return/Exchange, remove customers via the red icon (greyed out for customers already at a register), and add a customer by scanning the back of their CA Driver's License or other ID.</span></li>
-      <li><span class="list-bullet bullet-num">39</span><span><strong>Configure Printer Connections</strong> — Link a Bluetooth scanner via STC barcode pairing, discover available Bluetooth printers, select from the connected devices list, and run a test print to verify the connection.</span></li>
-      <li><span class="list-bullet bullet-num">40</span><span><strong>Return</strong> — Process a return from Order History: select or scan the order, click Return Items, enter Manager PIN, scan item QR codes, select return reason, choose Credit or Cash refund, and Complete Return.</span></li>
-      <li><span class="list-bullet bullet-num">41</span><span><strong>Exchange</strong> — Process an exchange from Order History: click Exchange Items, enter Manager PIN, scan items to return with a reason per item, scan replacement items (same SKU and batch only), and Confirm Exchange.</span></li>
+      <li><span class="list-bullet bullet-num">35</span><span><strong>Slotted Deliveries Packing Flow</strong> — Print label first (scan field is disabled until label is printed), scan product barcodes, delete any wrongly scanned items, then click Pack Order to advance to dispatch. Bulk Print Labels available for batch processing.</span></li>
+      <li><span class="list-bullet bullet-num">36</span><span><strong>Delete a Register</strong> — Permanently remove a register: Store Management &rarr; Registers &rarr; Menu &rarr; Delete Register &rarr; confirm Yes. This action is irreversible.</span></li>
+      <li><span class="list-bullet bullet-num">37</span><span><strong>Create a Register</strong> — Set up a new register: Store Management &rarr; Registers &rarr; New Register &rarr; fill in Register Name, Room, Terminal Name/ID, and min/max balance thresholds &rarr; Create Register.</span></li>
+      <li><span class="list-bullet bullet-num">38</span><span><strong>Open a Register &amp; Assign to Budtender</strong> — Open a register for a shift: Store Management &rarr; Registers &rarr; Open Register &rarr; assign users &rarr; fill required info &rarr; enter Manager PIN to authorize.</span></li>
+      <li><span class="list-bullet bullet-num">39</span><span><strong>Dropping a Register</strong> — Remove cash from a register mid-shift: Store Management &rarr; Registers &rarr; select the register &rarr; Drop &rarr; confirm the amount &rarr; Submit Drop.</span></li>
+      <li><span class="list-bullet bullet-num">40</span><span><strong>Configure a Terminal</strong> — Set up a new payment terminal: Store Management &rarr; Store Config &rarr; Merchant Terminal &rarr; New Terminal &rarr; fill all terminal details &rarr; toggle Enable &rarr; Save.</span></li>
+      <li><span class="list-bullet bullet-num">41</span><span><strong>Linking a Terminal</strong> — Device Management → Settings → Link New Device → select terminal from dropdown → Link Device → confirm green success banner. Terminal must be powered on and on the correct network.</span></li>
+      <li><span class="list-bullet bullet-num">42</span><span><strong>Customer Queue</strong> — Toggle Show Store Queue, search by first name, filter by Walk-in/Pickup/Return/Exchange, remove customers via the red icon (greyed out for customers already at a register), and add a customer by scanning the back of their CA Driver's License or other ID.</span></li>
+      <li><span class="list-bullet bullet-num">43</span><span><strong>Configure Printer Connections</strong> — Link a Bluetooth scanner via STC barcode pairing, discover available Bluetooth printers, select from the connected devices list, and run a test print to verify the connection.</span></li>
+      <li><span class="list-bullet bullet-num">44</span><span><strong>Return</strong> — Process a return from Order History: select or scan the order, click Return Items, enter Manager PIN, scan item QR codes, select return reason, choose Credit or Cash refund, and Complete Return.</span></li>
+      <li><span class="list-bullet bullet-num">45</span><span><strong>Exchange</strong> — Process an exchange from Order History: click Exchange Items, enter Manager PIN, scan items to return with a reason per item, scan replacement items (same SKU and batch only), and Confirm Exchange.</span></li>
+      <li><span class="list-bullet bullet-num">46</span><span><strong>Complete Weedmaps Pickup Order</strong> — Select Pickup, choose the customer's order tile, add products, notify the customer (text + email), confirm notification, locate the customer by phone with the blue pickup sticker, review the auto-populated cart, add any additional items, and process payment through Checkout.</span></li>
     </ul>
 
     <div class="section-label">Training Videos</div>
@@ -4848,6 +4863,417 @@
   <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Exchange &middot; Budtender POS</span></div>
 </div>
 
+<!-- ══════ WEEDMAPS PICKUP ══════ -->
+<div id="page-weedmaps-pickup" class="page">
+  <div class="page-header page-header-pos">
+    <div class="page-eyebrow">Budtender POS · SOP 44</div>
+    <h2 class="page-title">Complete Weedmaps Pickup Order</h2>
+    <p class="page-desc">How to process a Weedmaps pickup order in the Budtender POS — manage the order, add products, notify the customer, and complete payment.</p>
+  </div>
+  <div class="page-content">
+
+    <div class="highlight-box"><strong>What this covers:</strong> End-to-end flow for fulfilling a Weedmaps pickup order — from selecting the pickup queue, adding products, notifying the customer, confirming their identity via the blue pickup sticker, and processing final payment through checkout.</div>
+
+    <div class="section-label">Step-by-Step</div>
+
+    <div class="policy-title">Step 1: Select Pickup Option</div>
+    <p>Click the <strong>Pickup</strong> option in the Budtender POS to enter the Weedmaps pickup order queue.</p>
+
+    <div class="policy-title">Step 2: Choose Customer Order Tile</div>
+    <p>Select the desired <strong>customer's order tile</strong> to access their order details and proceed with the pickup process.</p>
+
+    <div class="policy-title">Step 3: Add Products to Order</div>
+    <p>Click <strong>"Add Products"</strong> to include the items the customer has requested. Click the <strong>plus (+)</strong> next to each item to add it to the order.</p>
+
+    <div class="policy-title">Step 4: Save & Close Product List</div>
+    <p>After all products have been added, click <strong>"Save & Close"</strong> to confirm the selected products and return to the main order screen.</p>
+
+    <div class="policy-title">Step 5: Notify Customer</div>
+    <p>Click <strong>"Notify CX"</strong> to send the customer a notification about their order status. Notifications are sent by both <strong>text and email.</strong></p>
+
+    <div class="policy-title">Step 6: Confirm Notification</div>
+    <p>Click <strong>"Yes, Notify Customer"</strong> to confirm sending the notification. A confirmation message will appear in the <strong>top right</strong> of the screen acknowledging the customer has been notified.</p>
+
+    <div class="policy-title">Step 7: Select Customer Profile</div>
+    <p>Locate the customer by phone number. Note the <strong>blue pickup sticker</strong> attached to their account tile — this confirms the Weedmaps pickup association. Click the tile to open their profile.</p>
+
+    <div class="policy-title">Step 8: Confirm Weedmaps Order ID</div>
+    <p>The <strong>Weedmaps Order ID</strong> will display in the <strong>top right bar</strong> — verify this matches the customer's order before proceeding.</p>
+
+    <div class="policy-title">Step 9: Review Auto-Populated Cart</div>
+    <p>Items that were packed for the order will <strong>automatically appear in the cart.</strong> Review to ensure all packed items are present.</p>
+
+    <div class="policy-title">Step 10: Add Additional Products (If Needed)</div>
+    <p>If the customer wants to add more items, <strong>additional products can be added</strong> directly from this screen before checkout.</p>
+
+    <div class="policy-title">Step 11: Proceed to Checkout</div>
+    <p>Click <strong>"Checkout"</strong> to begin the payment process for the customer's pickup order.</p>
+
+    <div class="policy-title">Step 12: Process Payment</div>
+    <p>Click <strong>"Process Payment"</strong> to finalize the transaction and complete the sale.</p>
+
+    <div class="section-label">Quick Reference</div>
+    <div class="step-track">
+      <div class="step-block s1"><div class="step-block-num">Pickup</div><div class="step-block-name">Queue</div></div>
+      <div class="step-block s2"><div class="step-block-num">Select</div><div class="step-block-name">Order Tile</div></div>
+      <div class="step-block s3"><div class="step-block-num">Add</div><div class="step-block-name">Products</div></div>
+      <div class="step-block s4"><div class="step-block-num">Notify</div><div class="step-block-name">Customer</div></div>
+      <div class="step-block s5"><div class="step-block-num">Confirm</div><div class="step-block-name">Blue Sticker</div></div>
+      <div class="step-block s6"><div class="step-block-num">Verify</div><div class="step-block-name">Order ID</div></div>
+      <div class="step-block s7"><div class="step-block-num">Checkout</div><div class="step-block-name">& Pay</div></div>
+    </div>
+
+    <div class="section-label">Key Rules</div>
+    <ul class="policy-list">
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>The <strong>blue pickup sticker</strong> on the customer tile confirms the Weedmaps order link — always verify before proceeding.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>The <strong>Weedmaps Order ID</strong> appears in the top right bar — confirm it matches the customer's order before checkout.</span></li>
+      <li><span class="list-bullet bullet-check">&#10003;</span><span>Always click <strong>Notify CX</strong> and confirm the notification before pulling up the customer — this keeps the customer informed and reduces wait time confusion.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>Packed items appear in the cart automatically — only add additional products if the customer explicitly requests them.</span></li>
+    </ul>
+
+    <div class="section-label">Video Walkthrough</div>
+    <a class="vguide-card" href="https://app.guidde.com/share/playbooks/oTPUBkYtpXJP1XWq3Ghau3" target="_blank" rel="noopener" style="max-width:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;">
+      <div class="vguide-thumb" style="background:#111;">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
+      </div>
+      <div class="vguide-body">
+        <div class="vguide-tag">Budtender POS &middot; Weedmaps</div>
+        <div class="vguide-title">Complete Weedmaps Pickup Order</div>
+        <div class="vguide-desc">Pickup queue &rarr; order tile &rarr; add products &rarr; notify CX &rarr; blue sticker &rarr; verify Order ID &rarr; checkout &rarr; process payment.</div>
+        <div class="vguide-steps">
+          <span class="vstep">1 Select Pickup</span>
+          <span class="vstep">2 Add Products</span>
+          <span class="vstep">3 Notify CX</span>
+          <span class="vstep">4 Checkout</span>
+        </div>
+        <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+    </a>
+
+  </div>
+  <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Complete Weedmaps Pickup Order &middot; Budtender POS</span></div>
+</div>
+
+<!-- ══════ DRIVER NEW USER ══════ -->
+<div id="page-driver-new-user" class="page">
+  <div class="page-header page-header-dispatch">
+    <div class="page-eyebrow">Driver App · SOP 19</div>
+    <h2 class="page-title">(New User) Register, Login & Start Shift</h2>
+    <p class="page-desc">How to register as a new driver, log in to the Omnigreen Driver App, clock in, go online, and accept your first order.</p>
+  </div>
+  <div class="page-content">
+
+    <div class="highlight-box"><strong>What this covers:</strong> Full onboarding flow for a brand-new driver — registration using the Operator code, mobile number, and invite code, followed by clocking in to an assigned shift, going online after inventory assignment, and accepting the first order.</div>
+
+    <div class="section-label">Registration</div>
+
+    <div class="policy-title">Step 1: New Users</div>
+    <p>On the Driver App login screen, click <strong>"New Users"</strong> to begin the registration process.</p>
+
+    <div class="policy-title">Step 2: Enter Registration Details</div>
+    <p>Fill in all three required fields:</p>
+    <div class="two-col">
+      <div class="mini-card"><div class="mini-card-label">Operator Code</div><div class="mini-card-value">Provided by your hub manager — identifies the organization you're registering under.</div></div>
+      <div class="mini-card"><div class="mini-card-label">Mobile Number</div><div class="mini-card-value">Your personal mobile number — this becomes your login credential.</div></div>
+    </div>
+    <div class="two-col" style="margin-top:8px;">
+      <div class="mini-card"><div class="mini-card-label">Invite Code</div><div class="mini-card-value">One-time code provided by your manager — required to complete registration.</div></div>
+    </div>
+
+    <div class="policy-title">Step 3: Sign Up</div>
+    <p>After entering all required data, click <strong>"Sign Up"</strong> to complete the registration process and create your driver account.</p>
+
+    <div class="section-label">Starting Your Shift</div>
+
+    <div class="policy-title">Step 4: Clock In</div>
+    <p>If a shift has been assigned to you, the <strong>assigned shift slot will appear.</strong> Swipe right to <strong>clock in</strong> and begin your shift.</p>
+
+    <div class="policy-title">Step 5: Go Online</div>
+    <p>After clocking in and being assigned inventory from the warehouse, a <strong>pop-up window will appear</strong> — swipe right to <strong>go online</strong> and become available for orders.</p>
+
+    <div class="policy-title">Step 6: Accept First Order</div>
+    <p>Once online, the <strong>first order of the shift will appear.</strong> Swipe right to <strong>accept the order</strong> and begin the delivery.</p>
+
+    <div class="section-label">Quick Reference</div>
+    <div class="step-track">
+      <div class="step-block s1"><div class="step-block-num">New</div><div class="step-block-name">Users</div></div>
+      <div class="step-block s2"><div class="step-block-num">Enter</div><div class="step-block-name">Details</div></div>
+      <div class="step-block s3"><div class="step-block-num">Sign</div><div class="step-block-name">Up</div></div>
+      <div class="step-block s4"><div class="step-block-num">Clock</div><div class="step-block-name">In</div></div>
+      <div class="step-block s5"><div class="step-block-num">Go</div><div class="step-block-name">Online</div></div>
+      <div class="step-block s6"><div class="step-block-num">Accept</div><div class="step-block-name">Order</div></div>
+    </div>
+
+    <div class="section-label">Key Rules</div>
+    <ul class="policy-list">
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>You will need your <strong>Operator code and Invite code</strong> from your manager before you can register — do not attempt without both.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>Your <strong>mobile number</strong> becomes your permanent login credential — use the correct number.</span></li>
+      <li><span class="list-bullet bullet-check">&#10003;</span><span>You can only go online after the warehouse has <strong>assigned inventory to your tote</strong> — the pop-up appears automatically once this is done.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>If no shift slot appears after clocking in, contact your hub manager — your shift may not have been assigned yet.</span></li>
+    </ul>
+
+    <div class="section-label">Video Walkthrough</div>
+    <a class="vguide-card" href="https://app.guidde.com/share/playbooks/2m7ixbd2qkJwBNfwfjvytK" target="_blank" rel="noopener" style="max-width:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;">
+      <div class="vguide-thumb" style="background:#111;">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
+      </div>
+      <div class="vguide-body">
+        <div class="vguide-tag">Driver App &middot; Onboarding</div>
+        <div class="vguide-title">(New User) Register, Login & Start Shift</div>
+        <div class="vguide-desc">New Users &rarr; Enter Operator code, mobile &amp; invite code &rarr; Sign Up &rarr; Clock In &rarr; Go Online &rarr; Accept first order.</div>
+        <div class="vguide-steps">
+          <span class="vstep">1 New Users</span>
+          <span class="vstep">2 Sign Up</span>
+          <span class="vstep">3 Clock In</span>
+          <span class="vstep">4 Go Online</span>
+        </div>
+        <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+    </a>
+
+  </div>
+  <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>(New User) Register, Login & Start Shift &middot; Driver App</span></div>
+</div>
+
+<!-- ══════ DRIVER EXISTING USER ══════ -->
+<div id="page-driver-existing-user" class="page">
+  <div class="page-header page-header-dispatch">
+    <div class="page-eyebrow">Driver App · SOP 20</div>
+    <h2 class="page-title">(Existing User) Login & Start Shift</h2>
+    <p class="page-desc">How an existing driver logs in to the Omnigreen Driver App using OTP, clocks in, goes online, and accepts their first order.</p>
+  </div>
+  <div class="page-content">
+
+    <div class="highlight-box"><strong>What this covers:</strong> Login flow for a returning driver — auto-populated credentials, OTP generation and entry, clock-in to an assigned shift, going online after inventory is assigned, and accepting the first routed order.</div>
+
+    <div class="section-label">Login</div>
+
+    <div class="policy-title">Step 1: Existing Users</div>
+    <p>On the Driver App login screen, click <strong>"Existing Users"</strong> to begin the login process.</p>
+
+    <div class="policy-title">Step 2: Auto-Populated Fields</div>
+    <p>The <strong>Operator code and mobile number</strong> will auto-populate from your previous session. Verify these are correct before continuing.</p>
+
+    <div class="policy-title">Step 3: Regenerate OTP</div>
+    <p>Click <strong>"Regenerate OTP"</strong> — your one-time password will be sent to your mobile number via text message.</p>
+
+    <div class="policy-title">Step 4: Enter OTP</div>
+    <p>Retrieve the OTP from your text message and <strong>enter it into the OTP field.</strong></p>
+
+    <div class="policy-title">Step 5: Login</div>
+    <p>Once the OTP field is populated, click <strong>"Login"</strong> to access your driver account.</p>
+
+    <div class="section-label">Starting Your Shift</div>
+
+    <div class="policy-title">Step 6: Clock In</div>
+    <p>If a shift has been assigned to you, the <strong>assigned shift slot will appear.</strong> Swipe right to <strong>clock in.</strong></p>
+
+    <div class="policy-title">Step 7: Go Online</div>
+    <p>After clocking in and being assigned inventory from the warehouse, a <strong>pop-up window will appear</strong> — swipe right to <strong>go online.</strong></p>
+
+    <div class="policy-title">Step 8: Wait for Order</div>
+    <p>After going online, the screen will display a <strong>waiting for orders</strong> window. This is normal — wait for an order to be routed to you.</p>
+
+    <div class="policy-title">Step 9: Accept First Order</div>
+    <p>When an order is assigned, the screen will prompt you to accept it. <strong>Swipe right to accept the order</strong> and begin the delivery.</p>
+
+    <div class="section-label">Quick Reference</div>
+    <div class="step-track">
+      <div class="step-block s1"><div class="step-block-num">Existing</div><div class="step-block-name">Users</div></div>
+      <div class="step-block s2"><div class="step-block-num">Regen</div><div class="step-block-name">OTP</div></div>
+      <div class="step-block s3"><div class="step-block-num">Enter</div><div class="step-block-name">OTP</div></div>
+      <div class="step-block s4"><div class="step-block-num">Login</div><div class="step-block-name"></div></div>
+      <div class="step-block s5"><div class="step-block-num">Clock</div><div class="step-block-name">In</div></div>
+      <div class="step-block s6"><div class="step-block-num">Go</div><div class="step-block-name">Online</div></div>
+      <div class="step-block s7"><div class="step-block-num">Accept</div><div class="step-block-name">Order</div></div>
+    </div>
+
+    <div class="section-label">Key Rules</div>
+    <ul class="policy-list">
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>OTP codes expire quickly — <strong>enter it promptly</strong> after receiving the text.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>If the OTP does not arrive, click <strong>Regenerate OTP</strong> again — check that your mobile number is correct.</span></li>
+      <li><span class="list-bullet bullet-check">&#10003;</span><span>The <strong>waiting for orders</strong> screen is normal — do not log out or restart the app while waiting.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>If no shift slot appears after login, contact your hub manager — your shift may not have been scheduled.</span></li>
+    </ul>
+
+    <div class="section-label">Video Walkthrough</div>
+    <a class="vguide-card" href="https://app.guidde.com/share/playbooks/pAyCJN5eUoH2aTwA3JeeUA" target="_blank" rel="noopener" style="max-width:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;">
+      <div class="vguide-thumb" style="background:#111;">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
+      </div>
+      <div class="vguide-body">
+        <div class="vguide-tag">Driver App &middot; Login</div>
+        <div class="vguide-title">(Existing User) Login & Start Shift</div>
+        <div class="vguide-desc">Existing Users &rarr; auto-populated fields &rarr; Regenerate OTP &rarr; Enter OTP &rarr; Login &rarr; Clock In &rarr; Go Online &rarr; Accept first order.</div>
+        <div class="vguide-steps">
+          <span class="vstep">1 Existing Users</span>
+          <span class="vstep">2 OTP</span>
+          <span class="vstep">3 Login</span>
+          <span class="vstep">4 Clock In &amp; Go Online</span>
+        </div>
+        <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+    </a>
+
+  </div>
+  <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>(Existing User) Login & Start Shift &middot; Driver App</span></div>
+</div>
+
+<!-- ══════ DRIVER RECEIVE PACK ══════ -->
+<div id="page-driver-receive-pack" class="page">
+  <div class="page-header page-header-dispatch">
+    <div class="page-eyebrow">Driver App · SOP 21</div>
+    <h2 class="page-title">Process: Receive & Pack Order</h2>
+    <p class="page-desc">How to accept an incoming order, verify the customer, select the exit bag, scan or type Master Pack numbers to pack the tote, and complete the delivery.</p>
+  </div>
+  <div class="page-content">
+
+    <div class="highlight-box"><strong>What this covers:</strong> Full order fulfillment flow from accepting the order prompt through packing the tote and completing delivery — including customer ID verification, exit bag selection, Master Pack scanning, and the 100-foot geofence requirement to swipe complete.</div>
+
+    <div class="section-label">Accepting the Order</div>
+
+    <div class="policy-title">Step 1: Order Received</div>
+    <p>When an order arrives, the screen displays an acceptance prompt. <strong>Swipe right</strong> to confirm and accept the order.</p>
+
+    <div class="policy-title">Step 2: Review Order Info</div>
+    <p>The next screen displays the full order details including:</p>
+    <div class="two-col">
+      <div class="mini-card"><div class="mini-card-label">Customer Info</div><div class="mini-card-value">First and last name, new customer flag, and contact options (call or text).</div></div>
+      <div class="mini-card"><div class="mini-card-label">Order Details</div><div class="mini-card-value">Delivery address and amount to be collected from the customer.</div></div>
+    </div>
+
+    <div class="policy-title">Step 3: View Customer Profile</div>
+    <p>Click <strong>"View Profile"</strong> to access the customer's identity documents — includes their <strong>ID, selfie, and medical recommendation</strong> (if applicable). Verify before packing.</p>
+
+    <div class="section-label">Packing the Order</div>
+
+    <div class="policy-title">Step 4: View Items</div>
+    <p>Click <strong>"View Items"</strong> to enter the packing screen and begin preparing the order.</p>
+
+    <div class="policy-title">Step 5: Select Exit Bag</div>
+    <p>Ensure the <strong>correct exit bag</strong> is used for this order. Click the <strong>confirmation box</strong> when the correct bag is confirmed, then click <strong>Next</strong> in the lower right corner.</p>
+
+    <div class="policy-title">Step 6: Pack the Order</div>
+    <p>On the Pack Order screen you will see each item's <strong>name, quantity, and tote placement.</strong> Review carefully to ensure you are packing the right items in the right positions.</p>
+
+    <div class="policy-title">Step 7: Scan or Type Master Pack Numbers</div>
+    <p>For each item, either <strong>scan</strong> the Master Pack barcode or <strong>type</strong> the Master Pack number to confirm it. Once all items are successfully packed, click <strong>"Successfully Packed"</strong> to proceed.</p>
+
+    <div class="section-label">Completing the Delivery</div>
+
+    <div class="policy-title">Step 8: Complete the Order</div>
+    <p>When the order has been delivered and cash collected, <strong>swipe right</strong> to mark the order complete.</p>
+
+    <div class="amber-box"><strong>&#9888; Geofence Requirement:</strong> The swipe-to-complete action is only available when the driver is <strong>within 100 feet</strong> of the delivery address. Do not attempt to complete the order before arriving at the location.</div>
+
+    <div class="section-label">Quick Reference</div>
+    <div class="step-track">
+      <div class="step-block s1"><div class="step-block-num">Swipe</div><div class="step-block-name">Accept</div></div>
+      <div class="step-block s2"><div class="step-block-num">View</div><div class="step-block-name">Profile</div></div>
+      <div class="step-block s3"><div class="step-block-num">Exit</div><div class="step-block-name">Bag</div></div>
+      <div class="step-block s4"><div class="step-block-num">Scan</div><div class="step-block-name">Master Pack</div></div>
+      <div class="step-block s5"><div class="step-block-num">Successfully</div><div class="step-block-name">Packed</div></div>
+      <div class="step-block s6"><div class="step-block-num">Deliver</div><div class="step-block-name">&amp; Swipe</div></div>
+    </div>
+
+    <div class="section-label">Key Rules</div>
+    <ul class="policy-list">
+      <li><span class="list-bullet bullet-x">&#10005;</span><span>Do not swipe complete until you are <strong>within 100 feet</strong> of the delivery address — the system will not allow it.</span></li>
+      <li><span class="list-bullet bullet-check">&#10003;</span><span>Always verify the customer's <strong>ID and selfie</strong> via View Profile before handing over the order.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>Check the <strong>new customer flag</strong> on the order info screen — new customers may need extra attention at handoff.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>Each Master Pack must be <strong>scanned or typed</strong> individually — all items must be confirmed before "Successfully Packed" becomes available.</span></li>
+    </ul>
+
+    <div class="section-label">Video Walkthrough</div>
+    <a class="vguide-card" href="https://app.guidde.com/share/playbooks/sTokfsdDB9FeC6e1VMhon5" target="_blank" rel="noopener" style="max-width:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;">
+      <div class="vguide-thumb" style="background:#111;">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
+      </div>
+      <div class="vguide-body">
+        <div class="vguide-tag">Driver App &middot; Order Fulfillment</div>
+        <div class="vguide-title">Process: Receive & Pack Order</div>
+        <div class="vguide-desc">Swipe to accept &rarr; view profile &rarr; view items &rarr; exit bag &rarr; scan Master Pack &rarr; Successfully Packed &rarr; deliver &rarr; swipe complete (within 100 ft).</div>
+        <div class="vguide-steps">
+          <span class="vstep">1 Accept Order</span>
+          <span class="vstep">2 View Profile</span>
+          <span class="vstep">3 Pack &amp; Scan</span>
+          <span class="vstep">4 Complete</span>
+        </div>
+        <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+    </a>
+
+  </div>
+  <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Process: Receive &amp; Pack Order &middot; Driver App</span></div>
+</div>
+
+<!-- ══════ DRIVER ROUTE TO HUB ══════ -->
+<div id="page-driver-route-hub" class="page">
+  <div class="page-header page-header-dispatch">
+    <div class="page-eyebrow">Driver App · SOP 22</div>
+    <h2 class="page-title">Route to Hub (End Shift)</h2>
+    <p class="page-desc">How to complete the Route to Hub (RTH) flow at the end of a shift — return cash and totes, then clock out of the Driver App.</p>
+  </div>
+  <div class="page-content">
+
+    <div class="highlight-box"><strong>What this covers:</strong> The end-of-shift RTH flow — receiving the hub return prompt, navigating back to the hub with the app open for accurate tracking, returning cash and totes, and swiping to clock out.</div>
+
+    <div class="non-neg-strip">
+      <div class="non-neg-strip-title">&#9888; Keep the App Open</div>
+      <div class="non-neg-item"><div class="non-neg-icon">!</div>Leave the app <strong>open or running in the background</strong> during the drive back to the hub — this allows accurate GPS tracking.</div>
+      <div class="non-neg-item"><div class="non-neg-icon">!</div><strong>Return all cash and totes</strong> before swiping to clock out — do not clock out with outstanding items.</div>
+    </div>
+
+    <div class="section-label">Step-by-Step</div>
+
+    <div class="policy-title">Step 1: Route to Hub Prompt (RTH)</div>
+    <p>At the end of the shift, the app will display an <strong>RTH prompt</strong> directing the driver to return to the hub. The screen will also show the <strong>total cash owed</strong> to be returned. Follow the in-app navigation to return to the hub — keep the app open or in the background for accurate tracking.</p>
+
+    <div class="policy-title">Step 2: Return Cash & Totes</div>
+    <p>Upon arriving at the hub, <strong>return all cash collected</strong> during the shift and <strong>return all totes</strong> to the warehouse team.</p>
+
+    <div class="policy-title">Step 3: Clock Out</div>
+    <p>Once cash and totes have been returned, the app will prompt the driver to clock out. <strong>Swipe right</strong> to clock out and end the shift.</p>
+
+    <div class="section-label">Quick Reference</div>
+    <div class="step-track">
+      <div class="step-block s1"><div class="step-block-num">RTH</div><div class="step-block-name">Prompt</div></div>
+      <div class="step-block s2"><div class="step-block-num">Drive</div><div class="step-block-name">to Hub</div></div>
+      <div class="step-block s3"><div class="step-block-num">Return</div><div class="step-block-name">Cash &amp; Totes</div></div>
+      <div class="step-block s4"><div class="step-block-num">Swipe</div><div class="step-block-name">Clock Out</div></div>
+    </div>
+
+    <div class="section-label">Key Rules</div>
+    <ul class="policy-list">
+      <li><span class="list-bullet bullet-x">&#10005;</span><span>Do <strong>not close the app</strong> during the drive back to the hub — GPS tracking must remain active.</span></li>
+      <li><span class="list-bullet bullet-x">&#10005;</span><span>Do not clock out until <strong>all cash and totes have been physically returned</strong> to the hub.</span></li>
+      <li><span class="list-bullet bullet-check">&#10003;</span><span>The RTH screen displays the <strong>exact cash amount owed</strong> — use this to reconcile before returning funds.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>If the clock-out swipe does not appear, confirm with the warehouse team that your totes and cash have been logged as received.</span></li>
+    </ul>
+
+    <div class="section-label">Video Walkthrough</div>
+    <a class="vguide-card" href="https://app.guidde.com/share/playbooks/ffbnooBrBdgrWz65JLLkMw" target="_blank" rel="noopener" style="max-width:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;">
+      <div class="vguide-thumb" style="background:#111;">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
+      </div>
+      <div class="vguide-body">
+        <div class="vguide-tag">Driver App &middot; End of Shift</div>
+        <div class="vguide-title">Route to Hub (End Shift)</div>
+        <div class="vguide-desc">RTH prompt appears &rarr; drive to hub (app open) &rarr; return cash &amp; totes &rarr; swipe right to clock out.</div>
+        <div class="vguide-steps">
+          <span class="vstep">1 RTH Prompt</span>
+          <span class="vstep">2 Drive to Hub</span>
+          <span class="vstep">3 Return Cash &amp; Totes</span>
+          <span class="vstep">4 Clock Out</span>
+        </div>
+        <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+    </a>
+
+  </div>
+  <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Route to Hub (End Shift) &middot; Driver App</span></div>
+</div>
+
 <!-- ══════ TRAINING VIDEOS ══════ -->
 <div id="page-training-videos" class="page">
   <div class="page-header page-header-pos">
@@ -5620,7 +6046,7 @@
         <span class="video-category-count">5 guides</span>
       </div>
       <div class="vguide-grid">
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/eEnfQu7LPGKr9ZH2LdX3J3" data-unverified="true" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/pAyCJN5eUoH2aTwA3JeeUA" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
@@ -5632,7 +6058,7 @@
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/8J84BWcQexjh6dmHdQNUba" data-unverified="true" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/2m7ixbd2qkJwBNfwfjvytK" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
@@ -5656,7 +6082,7 @@
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/foFaGk8PDdzWkVjAaWBUEi" data-unverified="true" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/sTokfsdDB9FeC6e1VMhon5" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
@@ -5668,7 +6094,7 @@
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/viEvu5F6KdoMXL5aLHXZPH" data-unverified="true" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/ffbnooBrBdgrWz65JLLkMw" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
@@ -5726,7 +6152,7 @@
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/c34nj3MRa9Xu4p1utepr2g" data-unverified="true" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/oTPUBkYtpXJP1XWq3Ghau3" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
@@ -5862,7 +6288,8 @@ const SOP_ORDER = [
   'welcome-flag','welcome-login','welcome-customer','welcome-medical','welcome-edit-profile',
   'slotted-packing','linking-terminal','configure-terminal',
   'create-register','open-register','drop-register','delete-register','customer-queue',
-  'configure-printer','return','exchange'
+  'weedmaps-pickup','configure-printer','return','exchange',
+  'driver-new-user','driver-existing-user','driver-receive-pack','driver-route-hub'
 ];
 
 // Map page ID → section div ID for auto-expand on navigation
@@ -5886,7 +6313,10 @@ const PAGE_SECTION_MAP = {
   'slotted-packing':'ns-pos','linking-terminal':'ns-pos','configure-terminal':'ns-pos',
   'create-register':'ns-pos','open-register':'ns-pos','drop-register':'ns-pos',
   'delete-register':'ns-pos','customer-queue':'ns-pos',
-  'configure-printer':'ns-pos','return':'ns-pos','exchange':'ns-pos'
+  'configure-printer':'ns-pos','return':'ns-pos','exchange':'ns-pos',
+  'weedmaps-pickup':'ns-pos',
+  'driver-new-user':'ns-driver','driver-existing-user':'ns-driver',
+  'driver-receive-pack':'ns-driver','driver-route-hub':'ns-driver'
 };
 
 let currentPageId = 'cover';
@@ -6064,6 +6494,31 @@ const SEARCH_INDEX = [
     id: 'customer-queue', section: 'Budtender POS', title: 'Customer Queue',
     keywords: 'customer queue show store queue toggle walk-in pickup return exchange filter remove customer red icon reason yes remove customer add customer ID scan California drivers license back of ID register queue line manual search first name',
     snippets: ['Navigate the customer queue — toggle, filter by Walk-in/Pickup/Return, remove with reason','Scan back of CA Driver\'s License to instantly pull up customer on a register']
+  },
+  {
+    id: 'weedmaps-pickup', section: 'Budtender POS', title: 'Complete Weedmaps Pickup Order',
+    keywords: 'weedmaps pickup order budtender POS pickup queue order tile add products notify CX notify customer text email blue sticker weedmaps order ID cart checkout process payment',
+    snippets: ['Pickup queue → select order tile → add products → Notify CX (text + email) → blue pickup sticker → verify Weedmaps Order ID → Checkout → Process Payment','The blue pickup sticker on the customer tile confirms the Weedmaps order — always verify before proceeding to checkout.']
+  },
+  {
+    id: 'driver-receive-pack', section: 'Driver App', title: 'Process: Receive & Pack Order',
+    keywords: 'driver app receive pack order accept swipe view profile ID selfie medical recommendation exit bag pack order master pack scan type successfully packed complete delivery 100 feet geofence cash collect',
+    snippets: ['Swipe to accept → view profile (ID/selfie/medical) → exit bag → scan Master Pack numbers → Successfully Packed → deliver → swipe complete within 100 ft','Swipe-to-complete only unlocks within 100 feet of the delivery address — do not attempt before arriving.']
+  },
+  {
+    id: 'driver-route-hub', section: 'Driver App', title: 'Route to Hub (End Shift)',
+    keywords: 'driver app route to hub RTH end shift clock out return cash totes GPS tracking app open background cash owed swipe clock out warehouse hub return',
+    snippets: ['RTH prompt appears at end of shift showing cash owed → drive to hub (keep app open) → return cash and totes → swipe right to clock out','Do not close the app during the drive back — GPS tracking must stay active for accurate routing.']
+  },
+  {
+    id: 'driver-new-user', section: 'Driver App', title: '(New User) Register, Login & Start Shift',
+    keywords: 'driver app new user register login start shift operator code mobile number invite code sign up clock in go online accept order onboarding new driver registration OTP shift',
+    snippets: ['New Users → enter Operator code, mobile number and invite code → Sign Up → Clock In → Go Online → accept first order','You need the Operator code and Invite code from your manager before registering — have both ready.']
+  },
+  {
+    id: 'driver-existing-user', section: 'Driver App', title: '(Existing User) Login & Start Shift',
+    keywords: 'driver app existing user login start shift OTP regenerate OTP clock in go online accept order shift auto-populated operator code mobile number existing driver',
+    snippets: ['Existing Users → auto-populated fields → Regenerate OTP → enter OTP → Login → Clock In → Go Online → accept first order','OTP expires quickly — enter it promptly after receiving the text. Waiting for orders screen is normal.']
   },
   {
     id: 'configure-printer', section: 'Budtender POS', title: 'Configure Printer Connections',
