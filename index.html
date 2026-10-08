@@ -623,6 +623,7 @@
   <div class="nav-group-label collapsed" onclick="toggleSection('ns-tote',this)">Tote &amp; Inventory<span class="nav-chevron">▾</span></div>
   <div class="nav-section collapsed" id="ns-tote">
     <a class="nav-link" href="#" onclick="show('tote-reconciliation',this)"><span class="nav-dot"></span>Tote Reconciliation</a>
+    <a class="nav-link" href="#" onclick="show('tote-config',this)"><span class="nav-dot"></span>Driver Tote Menu Config</a>
     <a class="nav-link" href="#" onclick="show('bin-restore',this)"><span class="nav-dot"></span>Bin Management: Restore Unit</a>
     <a class="nav-link" href="#" onclick="show('bin-manage',this)"><span class="nav-dot"></span>Bin Management: Add / Remove Master Pack</a>
     <a class="nav-link" href="#" onclick="show('inventory-summary',this)"><span class="nav-dot"></span>Inventory Summary &amp; Bulk Transfers</a>
@@ -731,6 +732,7 @@
     </optgroup>
     <optgroup label="— Tote &amp; Inventory —">
       <option value="tote-reconciliation">Tote Reconciliation</option>
+      <option value="tote-config">Driver Tote Menu Configuration</option>
       <option value="bin-manage">Bin Management: Add / Remove Master Pack</option>
       <option value="bin-restore">Bin Management: Restore Unit</option>
       <option value="inventory-summary">Inventory Summary &amp; Bulk Transfers</option>
@@ -936,6 +938,11 @@
       <li><span class="list-bullet bullet-num">44</span><span><strong>Return</strong> — Process a return from Order History: select or scan the order, click Return Items, enter Manager PIN, scan item QR codes, select return reason, choose Credit or Cash refund, and Complete Return.</span></li>
       <li><span class="list-bullet bullet-num">45</span><span><strong>Exchange</strong> — Process an exchange from Order History: click Exchange Items, enter Manager PIN, scan items to return with a reason per item, scan replacement items (same SKU and batch only), and Confirm Exchange.</span></li>
       <li><span class="list-bullet bullet-num">46</span><span><strong>Complete Weedmaps Pickup Order</strong> — Select Pickup, choose the customer's order tile, add products, notify the customer (text + email), confirm notification, locate the customer by phone with the blue pickup sticker, review the auto-populated cart, add any additional items, and process payment through Checkout.</span></li>
+    </ul>
+
+    <div class="section-label">Tote Configuration — SOP 47</div>
+    <ul class="policy-list">
+      <li><span class="list-bullet bullet-num">47</span><span><strong>Driver Tote Menu Configuration (New Menu)</strong> — Totes → Create/Configure → Create Tote Config → select Store and Zone → add products (minimum one required) → assign each product to a tote pocket → set quantities → Save.</span></li>
     </ul>
 
     <div class="section-label">Training Videos</div>
@@ -5293,6 +5300,88 @@
   <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Route to Hub (End Shift) &middot; Driver App</span></div>
 </div>
 
+<!-- ══════ DRIVER TOTE CONFIG ══════ -->
+<div id="page-tote-config" class="page">
+  <div class="page-header page-header-dispatch">
+    <div class="page-eyebrow">Backoffice · Admin · SOP 47</div>
+    <h2 class="page-title">Driver Tote Menu Configuration (New Menu)</h2>
+    <p class="page-desc">How to create and configure a new driver tote menu in the Omnigreen Backoffice — set the store, zone, products, pocket assignments, quantities, and save.</p>
+  </div>
+  <div class="page-content">
+
+    <div class="highlight-box"><strong>What this covers:</strong> Creating a new Driver Tote Menu configuration from scratch — selecting the store and zone, adding products, assigning each product to a tote pocket, setting quantities, and saving the completed configuration.</div>
+
+    <div class="section-label">Step-by-Step</div>
+
+    <div class="policy-title">Step 1: Access Totes</div>
+    <p>Navigate to the <strong>Totes</strong> section in Backoffice.</p>
+
+    <div class="policy-title">Step 2: Create / Configure</div>
+    <p>Click on <strong>"Create/Configure"</strong> to open the tote menu configuration options.</p>
+
+    <div class="policy-title">Step 3: Create Tote Config</div>
+    <p>Select <strong>"Create Tote Config"</strong> to begin building a new configuration from scratch.</p>
+
+    <div class="policy-title">Step 4: Select Store</div>
+    <p>Click <strong>"Select Store"</strong> to choose the domain (store) this new tote configuration will be assigned to.</p>
+
+    <div class="policy-title">Step 5: Select Zone</div>
+    <p>Click <strong>"Select Zone"</strong> to choose from the available delivery zones associated with the selected store.</p>
+
+    <div class="policy-title">Step 6: Add Products</div>
+    <p>Click the <strong>"Add Product"</strong> button to begin adding products to the tote menu. All products added will appear in the product list. <strong>At least one product must remain in the list</strong> to save the configuration.</p>
+
+    <div class="policy-title">Step 7: Assign Tote Pocket</div>
+    <p>For each product, type in the <strong>tote pocket designation</strong> — this determines which compartment of the tote the item belongs to.</p>
+
+    <div class="policy-title">Step 8: Set Quantity</div>
+    <p>Use the quantity column to <strong>add or subtract</strong> the desired quantity of each product per pocket.</p>
+
+    <div class="policy-title">Step 9: Save Configuration</div>
+    <p>When all products, pockets, and quantities are configured correctly, click <strong>"Save"</strong> to finalize the new tote menu.</p>
+
+    <div class="section-label">Quick Reference</div>
+    <div class="step-track">
+      <div class="step-block s1"><div class="step-block-num">Totes</div><div class="step-block-name">Section</div></div>
+      <div class="step-block s2"><div class="step-block-num">Create</div><div class="step-block-name">Configure</div></div>
+      <div class="step-block s3"><div class="step-block-num">Select</div><div class="step-block-name">Store</div></div>
+      <div class="step-block s4"><div class="step-block-num">Select</div><div class="step-block-name">Zone</div></div>
+      <div class="step-block s5"><div class="step-block-num">Add</div><div class="step-block-name">Products</div></div>
+      <div class="step-block s6"><div class="step-block-num">Pocket</div><div class="step-block-name">+ Qty</div></div>
+      <div class="step-block s7"><div class="step-block-num">Save</div><div class="step-block-name">Config</div></div>
+    </div>
+
+    <div class="section-label">Key Rules</div>
+    <ul class="policy-list">
+      <li><span class="list-bullet bullet-x">&#10005;</span><span>The configuration cannot be saved with <strong>zero products</strong> — at least one product must remain in the list.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>Each product must have a <strong>pocket designation and quantity</strong> set before saving.</span></li>
+      <li><span class="list-bullet bullet-check">&#10003;</span><span>Confirm the correct <strong>Store and Zone</strong> before adding products — these cannot easily be changed after setup.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>Use the quantity +/− controls to set exact counts per pocket — do not leave quantities at zero.</span></li>
+    </ul>
+
+    <div class="section-label">Video Walkthrough</div>
+    <a class="vguide-card" href="https://app.guidde.com/share/playbooks/cMPWTBFn88nPSxskHSK6Zg" target="_blank" rel="noopener" style="max-width:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;">
+      <div class="vguide-thumb" style="background:#111;">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
+      </div>
+      <div class="vguide-body">
+        <div class="vguide-tag">Backoffice &middot; Admin</div>
+        <div class="vguide-title">Driver Tote Menu Configuration (New Menu)</div>
+        <div class="vguide-desc">Totes &rarr; Create/Configure &rarr; Create Tote Config &rarr; Select Store &rarr; Select Zone &rarr; Add Products &rarr; assign pockets &rarr; set quantities &rarr; Save.</div>
+        <div class="vguide-steps">
+          <span class="vstep">1 Totes Section</span>
+          <span class="vstep">2 Select Store &amp; Zone</span>
+          <span class="vstep">3 Add Products</span>
+          <span class="vstep">4 Pockets &amp; Save</span>
+        </div>
+        <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+    </a>
+
+  </div>
+  <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Driver Tote Menu Configuration &middot; Admin</span></div>
+</div>
+
 <!-- ══════ TRAINING VIDEOS ══════ -->
 <div id="page-training-videos" class="page">
   <div class="page-header page-header-pos">
@@ -5476,7 +5565,7 @@
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/9C8DtGWwv9B1gifyAh7UVf" data-unverified="true" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/foTnEu6gxZcq7pJvFDGiC9" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
@@ -5500,7 +5589,7 @@
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/8rS93JUDfhBfuboaijPJSG" data-unverified="true" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/o4VvE6hEQuzbthz2rVDcHq" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
@@ -5534,7 +5623,7 @@
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/kWhGTVigVSK3fnVmeK8eq4" data-unverified="true" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/6q7qvtt1G2E53vcjB5iZjV" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
@@ -5546,7 +5635,7 @@
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/j9wc4RWxbQDoDNSusTBKa6" data-unverified="true" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/4KqeLAHmJpbQ6eVd43heDb" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
@@ -5570,7 +5659,7 @@
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/oh5nWy7Ne44TeKRkB9rxXf" data-unverified="true" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/cMPWTBFn88nPSxskHSK6Zg" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
@@ -5604,7 +5693,7 @@
         <span class="video-category-count">8 guides</span>
       </div>
       <div class="vguide-grid">
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/3Bpv7xaQCSByGLGQVKFWZX" data-unverified="true" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/q7eyPWu9Q9wSqnUom4VXaC" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
@@ -5616,7 +5705,7 @@
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/paBRDJjWSvFs7as2aGujQd" data-unverified="true" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/oipatdLqRY4iyG6Uu7jRgg" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
@@ -5628,7 +5717,7 @@
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/ps7aSZbydpGppJw94vDHaP" data-unverified="true" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/uQwLQTFMKauroAxEswDoJn" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
@@ -5652,7 +5741,7 @@
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/iqSuAeea3GttsWEXhEiqoL" data-unverified="true" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/rwGqEWqAHhP23UgBDLi81P" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
@@ -5664,7 +5753,7 @@
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/p16ER1NEXPoQCzbu38Yv8N" data-unverified="true" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/6XEsao1xt4prbfV9fBCQFH" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
@@ -5676,7 +5765,7 @@
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/j3MpdoqWvyFJJFGDER1cRV" data-unverified="true" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/wxHmHD4yk75rMt2Px77DkU" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
@@ -5688,7 +5777,7 @@
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/4naxtdQNkHGzJybfXY99u1" data-unverified="true" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/85YxivtmeU7TeZ8ZNArgEK" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
@@ -6308,7 +6397,8 @@ const SOP_ORDER = [
   'slotted-packing','linking-terminal','configure-terminal',
   'create-register','open-register','drop-register','delete-register','customer-queue',
   'weedmaps-pickup','configure-printer','return','exchange',
-  'driver-new-user','driver-existing-user','driver-receive-pack','driver-route-hub'
+  'driver-new-user','driver-existing-user','driver-receive-pack','driver-route-hub',
+  'tote-config'
 ];
 
 // Map page ID → section div ID for auto-expand on navigation
@@ -6320,7 +6410,7 @@ const PAGE_SECTION_MAP = {
   'verification':'ns-compliance',
   'new-order':'ns-dispatch','delivery-mgmt':'ns-dispatch','hold-cancel':'ns-dispatch',
   'order-eta':'ns-dispatch','hub-spoke':'ns-dispatch','live-order-credit':'ns-dispatch',
-  'tote-reconciliation':'ns-tote','bin-restore':'ns-tote','bin-manage':'ns-tote','inventory-summary':'ns-tote',
+  'tote-reconciliation':'ns-tote','bin-restore':'ns-tote','bin-manage':'ns-tote','inventory-summary':'ns-tote','tote-config':'ns-tote',
   'driver-app':'ns-driver',
   'user-permissions':'ns-admin','user-pin':'ns-admin','invite-user':'ns-admin',
   'report-orders':'ns-reports',
@@ -6518,6 +6608,11 @@ const SEARCH_INDEX = [
     id: 'weedmaps-pickup', section: 'Budtender POS', title: 'Complete Weedmaps Pickup Order',
     keywords: 'weedmaps pickup order budtender POS pickup queue order tile add products notify CX notify customer text email blue sticker weedmaps order ID cart checkout process payment',
     snippets: ['Pickup queue → select order tile → add products → Notify CX (text + email) → blue pickup sticker → verify Weedmaps Order ID → Checkout → Process Payment','The blue pickup sticker on the customer tile confirms the Weedmaps order — always verify before proceeding to checkout.']
+  },
+  {
+    id: 'tote-config', section: 'Tote & Inventory', title: 'Driver Tote Menu Configuration (New Menu)',
+    keywords: 'driver tote menu configuration create configure tote config select store zone add product pocket quantity save tote setup new menu backoffice admin',
+    snippets: ['Totes → Create/Configure → Create Tote Config → Select Store → Select Zone → Add Products → assign pockets → set quantities → Save','At least one product must remain in the list — the configuration cannot be saved with zero products.']
   },
   {
     id: 'driver-receive-pack', section: 'Driver App', title: 'Process: Receive & Pack Order',
