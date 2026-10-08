@@ -618,6 +618,7 @@
     <a class="nav-link" href="#" onclick="show('order-eta',this)"><span class="nav-dot"></span>Order ETA &amp; Color Legend</a>
     <a class="nav-link" href="#" onclick="show('hub-spoke',this)"><span class="nav-dot"></span>Hub &amp; Spoke</a>
     <a class="nav-link" href="#" onclick="show('live-order-credit',this)"><span class="nav-dot"></span>Live Order: Credit &amp; Note</a>
+    <a class="nav-link" href="#" onclick="show('scheduled-filter',this)"><span class="nav-dot"></span>Scheduled Order Filter</a>
   </div>
 
   <div class="nav-group-label collapsed" onclick="toggleSection('ns-tote',this)">Tote &amp; Inventory<span class="nav-chevron">▾</span></div>
@@ -663,6 +664,10 @@
   <div class="nav-section collapsed" id="ns-ecomm">
     <a class="nav-link" href="#" onclick="show('categories',this)"><span class="nav-dot"></span>Categories &amp; Subcategories</a>
     <a class="nav-link" href="#" onclick="show('ecomm-order',this)"><span class="nav-dot"></span>Customer Order Placement (E-Comm)</a>
+    <a class="nav-link" href="#" onclick="show('homepage-banner',this)"><span class="nav-dot"></span>Homepage Banner (Add)</a>
+    <a class="nav-link" href="#" onclick="show('faq',this)"><span class="nav-dot"></span>FAQ (Add / Edit)</a>
+    <a class="nav-link" href="#" onclick="show('privacy-policy',this)"><span class="nav-dot"></span>Privacy Policy (Add / Edit)</a>
+    <a class="nav-link" href="#" onclick="show('terms-conditions',this)"><span class="nav-dot"></span>Terms and Conditions (Edit)</a>
   </div>
 
   <div class="nav-group-label collapsed" onclick="toggleSection('ns-training',this)">Training<span class="nav-chevron">▾</span></div>
@@ -759,6 +764,11 @@
     <optgroup label="— Products &amp; E-Commerce —">
       <option value="categories">Categories &amp; Subcategories</option>
       <option value="ecomm-order">Customer Order Placement (E-Comm)</option>
+      <option value="scheduled-filter">Scheduled Order Filter</option>
+      <option value="homepage-banner">Homepage Banner (Add)</option>
+      <option value="faq">FAQ (Add / Edit)</option>
+      <option value="privacy-policy">Privacy Policy (Add / Edit)</option>
+      <option value="terms-conditions">Terms and Conditions (Edit)</option>
     </optgroup>
     <optgroup label="— Training —">
       <option value="training-videos">Training Videos</option>
@@ -943,6 +953,19 @@
     <div class="section-label">Tote Configuration — SOP 47</div>
     <ul class="policy-list">
       <li><span class="list-bullet bullet-num">47</span><span><strong>Driver Tote Menu Configuration (New Menu)</strong> — Totes → Create/Configure → Create Tote Config → select Store and Zone → add products (minimum one required) → assign each product to a tote pocket → set quantities → Save.</span></li>
+    </ul>
+
+    <div class="section-label">Dispatch Configuration — SOP 48</div>
+    <ul class="policy-list">
+      <li><span class="list-bullet bullet-num">48</span><span><strong>Scheduled Order Filter (Add / Edit)</strong> — Configuration → Scheduled Filter Config → Add Filter → name the filter → select zones → set order time window and driver start time → Save. Apply in Shipping & Dispatch → Slotted Deliveries → Filters → select filter name and zones → Apply.</span></li>
+    </ul>
+
+    <div class="section-label">E-Commerce Content — SOPs 49–52</div>
+    <ul class="policy-list">
+      <li><span class="list-bullet bullet-num">49</span><span><strong>Homepage Banner (Add)</strong> — E-Commerce → Homepage → +Banner → fill all required fields → Save.</span></li>
+      <li><span class="list-bullet bullet-num">50</span><span><strong>FAQ (Add / Edit)</strong> — E-Commerce → Pages → FAQ edit tool → add or remove Q&A items → Submit.</span></li>
+      <li><span class="list-bullet bullet-num">51</span><span><strong>Privacy Policy (Add / Edit)</strong> — E-Commerce → Pages → Privacy Policy action tool → edit content → Submit.</span></li>
+      <li><span class="list-bullet bullet-num">52</span><span><strong>Terms and Conditions (Edit)</strong> — E-Commerce → Pages → Terms and Conditions action tool → edit content → Submit.</span></li>
     </ul>
 
     <div class="section-label">Training Videos</div>
@@ -5382,6 +5405,244 @@
   <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Driver Tote Menu Configuration &middot; Admin</span></div>
 </div>
 
+<!-- ══════ SCHEDULED ORDER FILTER ══════ -->
+<div id="page-scheduled-filter" class="page">
+  <div class="page-header page-header-dispatch">
+    <div class="page-eyebrow">Backoffice · Configuration · SOP 48</div>
+    <h2 class="page-title">Scheduled Order Filter (Add / Edit)</h2>
+    <p class="page-desc">How to create or edit a scheduled order filter in Omnigreen — set the filter name, zones, order time window, and driver start time, then apply it in Slotted Deliveries.</p>
+  </div>
+  <div class="page-content">
+
+    <div class="highlight-box"><strong>What this covers:</strong> Creating a Scheduled Filter Configuration that controls which orders and drivers appear in the Slotted Deliveries view — based on order time window and driver shift time. Also covers how to apply the filter in Shipping & Dispatch.</div>
+
+    <div class="section-label">Creating the Filter</div>
+
+    <div class="policy-title">Step 1: Configuration</div>
+    <p>Click on the <strong>Configuration</strong> tab to access the drop-down options menu.</p>
+
+    <div class="policy-title">Step 2: Scheduled Filter Config</div>
+    <p>Click on <strong>"Scheduled Filter Config"</strong> to open the filter management screen.</p>
+
+    <div class="policy-title">Step 3: Add Filter</div>
+    <p>Click <strong>"Add Filter"</strong> to begin creating a new scheduled order filter.</p>
+
+    <div class="policy-title">Step 4: Name the Filter</div>
+    <p>Enter a descriptive <strong>filter name</strong>. Use a name that clearly identifies the time window or zone it covers (e.g., "Morning AM Zone A").</p>
+
+    <div class="policy-title">Step 5: Select Zones</div>
+    <p>Choose and click on <strong>all zones</strong> this filter will affect. Most filters will have all zones configured and selected.</p>
+
+    <div class="policy-title">Step 6: Order Time Window</div>
+    <p>Type in the <strong>order time window</strong> — this controls which scheduled orders will appear when this filter is applied.</p>
+
+    <div class="policy-title">Step 7: Driver Start Time</div>
+    <p>Enter the <strong>driver shift start time</strong> — this shows which drivers are available for the corresponding time window.</p>
+
+    <div class="policy-title">Step 8: Save</div>
+    <p>Click <strong>"Save"</strong> when all configuration is complete.</p>
+
+    <div class="section-label">Applying the Filter</div>
+
+    <div class="policy-title">Step 9: Shipping & Dispatch → Slotted Deliveries</div>
+    <p>Navigate to <strong>Shipping and Dispatch → Slotted Deliveries</strong> to apply the filter to the live view.</p>
+
+    <div class="policy-title">Step 10: Click Filters</div>
+    <p>Click on <strong>"Filters"</strong> to open the filter selection panel.</p>
+
+    <div class="policy-title">Step 11: Select Filter Name & Zone</div>
+    <p>Select the <strong>filter name</strong> from the list, then select the <strong>zones</strong> you want to view. Most filters will have all zones available.</p>
+
+    <div class="policy-title">Step 12: Apply</div>
+    <p>Click <strong>"Apply"</strong> to generate the filtered order view.</p>
+
+    <div class="section-label">Quick Reference</div>
+    <div class="step-track">
+      <div class="step-block s1"><div class="step-block-num">Config</div><div class="step-block-name">Tab</div></div>
+      <div class="step-block s2"><div class="step-block-num">Scheduled</div><div class="step-block-name">Filter Config</div></div>
+      <div class="step-block s3"><div class="step-block-num">Add</div><div class="step-block-name">Filter</div></div>
+      <div class="step-block s4"><div class="step-block-num">Name +</div><div class="step-block-name">Zones</div></div>
+      <div class="step-block s5"><div class="step-block-num">Order</div><div class="step-block-name">Time</div></div>
+      <div class="step-block s6"><div class="step-block-num">Driver</div><div class="step-block-name">Start Time</div></div>
+      <div class="step-block s7"><div class="step-block-num">Save</div><div class="step-block-name">→ Apply</div></div>
+    </div>
+
+  </div>
+  <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Scheduled Order Filter &middot; Configuration</span></div>
+</div>
+
+<!-- ══════ HOMEPAGE BANNER ══════ -->
+<div id="page-homepage-banner" class="page">
+  <div class="page-header" style="background:#1a1a2e;">
+    <div class="page-eyebrow">Backoffice · E-Commerce · SOP 49</div>
+    <h2 class="page-title">E-Commerce: Homepage Banner (Add)</h2>
+    <p class="page-desc">How to add a homepage banner to the Omnigreen e-commerce site — navigate to E-Commerce → Homepage, add the banner, fill all required fields, and save.</p>
+  </div>
+  <div class="page-content">
+
+    <div class="highlight-box"><strong>What this covers:</strong> Adding a new promotional or informational banner to the e-commerce homepage via the Backoffice E-Commerce section.</div>
+
+    <div class="section-label">Step-by-Step</div>
+
+    <div class="policy-title">Step 1: E-Commerce</div>
+    <p>Navigate to the <strong>E-Commerce</strong> dropdown menu in Backoffice.</p>
+
+    <div class="policy-title">Step 2: Homepage</div>
+    <p>Click on <strong>"Homepage"</strong> to open the homepage management screen.</p>
+
+    <div class="policy-title">Step 3: + Banner</div>
+    <p>Click the <strong>"+Banner"</strong> button to open the banner creation form.</p>
+
+    <div class="policy-title">Step 4: Add Information</div>
+    <p>Fill in <strong>all required information fields</strong> — all fields must be completed before the banner can be saved.</p>
+
+    <div class="policy-title">Step 5: Save</div>
+    <p>Click <strong>"Save"</strong> when all fields are complete to publish the banner to the homepage.</p>
+
+    <div class="section-label">Quick Reference</div>
+    <div class="step-track">
+      <div class="step-block s1"><div class="step-block-num">E-Commerce</div><div class="step-block-name">Menu</div></div>
+      <div class="step-block s2"><div class="step-block-num">Homepage</div><div class="step-block-name"></div></div>
+      <div class="step-block s3"><div class="step-block-num">+ Banner</div><div class="step-block-name"></div></div>
+      <div class="step-block s4"><div class="step-block-num">Fill</div><div class="step-block-name">All Fields</div></div>
+      <div class="step-block s5"><div class="step-block-num">Save</div><div class="step-block-name"></div></div>
+    </div>
+
+    <div class="section-label">Key Rules</div>
+    <ul class="policy-list">
+      <li><span class="list-bullet bullet-x">&#10005;</span><span><strong>All information fields must be filled in</strong> before clicking Save — the form will not submit with missing data.</span></li>
+    </ul>
+
+  </div>
+  <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Homepage Banner (Add) &middot; E-Commerce</span></div>
+</div>
+
+<!-- ══════ FAQ ══════ -->
+<div id="page-faq" class="page">
+  <div class="page-header" style="background:#1a1a2e;">
+    <div class="page-eyebrow">Backoffice · E-Commerce · SOP 50</div>
+    <h2 class="page-title">E-Commerce: FAQ (Add / Edit)</h2>
+    <p class="page-desc">How to add or edit the FAQ page on the Omnigreen e-commerce site — access E-Commerce → Pages, open the FAQ edit tool, add or remove questions, and submit.</p>
+  </div>
+  <div class="page-content">
+
+    <div class="highlight-box"><strong>What this covers:</strong> Adding and editing FAQ content on the e-commerce site via Backoffice — including adding new questions, removing existing ones, and submitting changes.</div>
+
+    <div class="section-label">Step-by-Step</div>
+
+    <div class="policy-title">Step 1: E-Commerce</div>
+    <p>Navigate to the <strong>E-Commerce</strong> dropdown menu in Backoffice.</p>
+
+    <div class="policy-title">Step 2: Pages</div>
+    <p>Click on <strong>"Pages"</strong> to view all editable site pages.</p>
+
+    <div class="policy-title">Step 3: Edit Tool — FAQ</div>
+    <p>Navigate to the <strong>edit tool</strong> in the right column for the <strong>FAQ</strong> domain and click it to open the editor.</p>
+
+    <div class="policy-title">Step 4: Add Information</div>
+    <p>Add all desired FAQ content — questions and answers — in the available fields.</p>
+
+    <div class="policy-title">Step 5: Add or Remove Items</div>
+    <p>If more questions need to be entered or removed, click <strong>"Add"</strong> to add additional Q&A fields or <strong>"Remove"</strong> to delete existing ones.</p>
+
+    <div class="policy-title">Step 6: Submit</div>
+    <p>Click <strong>"Submit"</strong> to save all changes and publish the updated FAQ to the site.</p>
+
+    <div class="section-label">Quick Reference</div>
+    <div class="step-track">
+      <div class="step-block s1"><div class="step-block-num">E-Commerce</div><div class="step-block-name">Menu</div></div>
+      <div class="step-block s2"><div class="step-block-num">Pages</div><div class="step-block-name"></div></div>
+      <div class="step-block s3"><div class="step-block-num">FAQ</div><div class="step-block-name">Edit Tool</div></div>
+      <div class="step-block s4"><div class="step-block-num">Add /</div><div class="step-block-name">Remove Items</div></div>
+      <div class="step-block s5"><div class="step-block-num">Submit</div><div class="step-block-name"></div></div>
+    </div>
+
+  </div>
+  <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>FAQ (Add / Edit) &middot; E-Commerce</span></div>
+</div>
+
+<!-- ══════ PRIVACY POLICY ══════ -->
+<div id="page-privacy-policy" class="page">
+  <div class="page-header" style="background:#1a1a2e;">
+    <div class="page-eyebrow">Backoffice · E-Commerce · SOP 51</div>
+    <h2 class="page-title">E-Commerce: Privacy Policy (Add / Edit)</h2>
+    <p class="page-desc">How to add or edit the Privacy Policy on the Omnigreen e-commerce site — access E-Commerce → Pages, open the Privacy Policy edit tool, update the content, and submit.</p>
+  </div>
+  <div class="page-content">
+
+    <div class="highlight-box"><strong>What this covers:</strong> Editing the Privacy Policy page on the e-commerce site via the Backoffice Pages section — including opening the editor via the action tool and submitting changes.</div>
+
+    <div class="section-label">Step-by-Step</div>
+
+    <div class="policy-title">Step 1: E-Commerce</div>
+    <p>Navigate to the <strong>E-Commerce</strong> dropdown menu in Backoffice.</p>
+
+    <div class="policy-title">Step 2: Pages</div>
+    <p>Click on <strong>"Pages"</strong> to view all editable site pages.</p>
+
+    <div class="policy-title">Step 3: Action Tool — Privacy Policy</div>
+    <p>Open the <strong>Privacy Policy</strong> for editing using the <strong>action tool</strong> in the right column.</p>
+
+    <div class="policy-title">Step 4: Add / Edit Information</div>
+    <p>Edit the Privacy Policy content as desired in the available text fields.</p>
+
+    <div class="policy-title">Step 5: Submit</div>
+    <p>Click <strong>"Submit"</strong> to save the changes and publish the updated Privacy Policy to the site.</p>
+
+    <div class="section-label">Quick Reference</div>
+    <div class="step-track">
+      <div class="step-block s1"><div class="step-block-num">E-Commerce</div><div class="step-block-name">Menu</div></div>
+      <div class="step-block s2"><div class="step-block-num">Pages</div><div class="step-block-name"></div></div>
+      <div class="step-block s3"><div class="step-block-num">Privacy Policy</div><div class="step-block-name">Action Tool</div></div>
+      <div class="step-block s4"><div class="step-block-num">Edit</div><div class="step-block-name">Content</div></div>
+      <div class="step-block s5"><div class="step-block-num">Submit</div><div class="step-block-name"></div></div>
+    </div>
+
+  </div>
+  <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Privacy Policy (Add / Edit) &middot; E-Commerce</span></div>
+</div>
+
+<!-- ══════ TERMS AND CONDITIONS ══════ -->
+<div id="page-terms-conditions" class="page">
+  <div class="page-header" style="background:#1a1a2e;">
+    <div class="page-eyebrow">Backoffice · E-Commerce · SOP 52</div>
+    <h2 class="page-title">E-Commerce: Terms and Conditions (Edit)</h2>
+    <p class="page-desc">How to edit the Terms and Conditions page on the Omnigreen e-commerce site — access E-Commerce → Pages, open the action tool, edit the content, and submit.</p>
+  </div>
+  <div class="page-content">
+
+    <div class="highlight-box"><strong>What this covers:</strong> Editing the Terms and Conditions page on the e-commerce site via the Backoffice Pages section — the same workflow as Privacy Policy editing.</div>
+
+    <div class="section-label">Step-by-Step</div>
+
+    <div class="policy-title">Step 1: E-Commerce</div>
+    <p>Navigate to the <strong>E-Commerce</strong> dropdown menu in Backoffice.</p>
+
+    <div class="policy-title">Step 2: Pages</div>
+    <p>Click on <strong>"Pages"</strong> to view all editable site pages.</p>
+
+    <div class="policy-title">Step 3: Action Tool — Terms and Conditions</div>
+    <p>Click the <strong>action tool</strong> in the right column for the <strong>Terms and Conditions</strong> domain to open the editor.</p>
+
+    <div class="policy-title">Step 4: Edit Information</div>
+    <p>Edit the Terms and Conditions content as desired.</p>
+
+    <div class="policy-title">Step 5: Submit</div>
+    <p>Click <strong>"Submit"</strong> to save changes and publish the updated Terms and Conditions to the site.</p>
+
+    <div class="section-label">Quick Reference</div>
+    <div class="step-track">
+      <div class="step-block s1"><div class="step-block-num">E-Commerce</div><div class="step-block-name">Menu</div></div>
+      <div class="step-block s2"><div class="step-block-num">Pages</div><div class="step-block-name"></div></div>
+      <div class="step-block s3"><div class="step-block-num">T&amp;C</div><div class="step-block-name">Action Tool</div></div>
+      <div class="step-block s4"><div class="step-block-num">Edit</div><div class="step-block-name">Content</div></div>
+      <div class="step-block s5"><div class="step-block-num">Submit</div><div class="step-block-name"></div></div>
+    </div>
+
+  </div>
+  <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Terms and Conditions (Edit) &middot; E-Commerce</span></div>
+</div>
+
 <!-- ══════ TRAINING VIDEOS ══════ -->
 <div id="page-training-videos" class="page">
   <div class="page-header page-header-pos">
@@ -5611,7 +5872,7 @@
         <span class="video-category-count">6 guides</span>
       </div>
       <div class="vguide-grid">
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/mdxojQoWGvdcoEQL2GppNn" data-unverified="true" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/qDiPcwpEFyNSDp5XGF2ssR" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
@@ -5647,18 +5908,7 @@
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/jmkrs2PWrM9zjNcw3hsp5E" data-unverified="true" target="_blank" rel="noopener">
-          <div class="vguide-thumb" style="background:#111;">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
-          </div>
-          <div class="vguide-body">
-            <div class="vguide-tag">Backoffice · Dispatch</div>
-            <div class="vguide-title">Hub & Spoke (Feature Functionality)</div>
-            <div class="vguide-desc">Overview of the Hub & Spoke feature and how to configure it.</div>
-            
-            <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          </div>
-        </a>
+
         <a class="vguide-card" href="https://app.guidde.com/share/playbooks/cMPWTBFn88nPSxskHSK6Zg" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
@@ -5671,7 +5921,7 @@
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/8b1MyqzfBx9kAroYDCvhCh" data-unverified="true" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/fpK2ok7SB5m3rghgmf1wzA" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
@@ -5942,18 +6192,6 @@
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/mXEA5g65gWZcjGrVhyWeCK" data-unverified="true" target="_blank" rel="noopener">
-          <div class="vguide-thumb" style="background:#111;">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
-          </div>
-          <div class="vguide-body">
-            <div class="vguide-tag">Backoffice · E-Commerce</div>
-            <div class="vguide-title">E-Commerce: Announcement Bar (Add)</div>
-            <div class="vguide-desc">Add an announcement banner to the top of the E-Commerce site.</div>
-            
-            <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          </div>
-        </a>
         <a class="vguide-card" href="https://app.guidde.com/share/playbooks/pj4P9HNW3koydVYfyFKFgJ" data-unverified="true" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
@@ -5986,18 +6224,6 @@
             <div class="vguide-tag">Backoffice · E-Commerce</div>
             <div class="vguide-title">E-Commerce: Privacy Policy (Add / Edit)</div>
             <div class="vguide-desc">Update the Privacy Policy page on the E-Commerce site.</div>
-            
-            <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          </div>
-        </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/dzFULvp1XQKMGj3A2NDaCV" data-unverified="true" target="_blank" rel="noopener">
-          <div class="vguide-thumb" style="background:#111;">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
-          </div>
-          <div class="vguide-body">
-            <div class="vguide-tag">Backoffice · E-Commerce</div>
-            <div class="vguide-title">E-Commerce: Contact Us (Add / Edit)</div>
-            <div class="vguide-desc">Edit the Contact Us page content on the E-Commerce site.</div>
             
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
@@ -6398,7 +6624,8 @@ const SOP_ORDER = [
   'create-register','open-register','drop-register','delete-register','customer-queue',
   'weedmaps-pickup','configure-printer','return','exchange',
   'driver-new-user','driver-existing-user','driver-receive-pack','driver-route-hub',
-  'tote-config'
+  'tote-config',
+  'scheduled-filter','homepage-banner','faq','privacy-policy','terms-conditions'
 ];
 
 // Map page ID → section div ID for auto-expand on navigation
@@ -6410,6 +6637,8 @@ const PAGE_SECTION_MAP = {
   'verification':'ns-compliance',
   'new-order':'ns-dispatch','delivery-mgmt':'ns-dispatch','hold-cancel':'ns-dispatch',
   'order-eta':'ns-dispatch','hub-spoke':'ns-dispatch','live-order-credit':'ns-dispatch',
+  'scheduled-filter':'ns-dispatch',
+  'homepage-banner':'ns-ecomm','faq':'ns-ecomm','privacy-policy':'ns-ecomm','terms-conditions':'ns-ecomm',
   'tote-reconciliation':'ns-tote','bin-restore':'ns-tote','bin-manage':'ns-tote','inventory-summary':'ns-tote','tote-config':'ns-tote',
   'driver-app':'ns-driver',
   'user-permissions':'ns-admin','user-pin':'ns-admin','invite-user':'ns-admin',
@@ -6608,6 +6837,31 @@ const SEARCH_INDEX = [
     id: 'weedmaps-pickup', section: 'Budtender POS', title: 'Complete Weedmaps Pickup Order',
     keywords: 'weedmaps pickup order budtender POS pickup queue order tile add products notify CX notify customer text email blue sticker weedmaps order ID cart checkout process payment',
     snippets: ['Pickup queue → select order tile → add products → Notify CX (text + email) → blue pickup sticker → verify Weedmaps Order ID → Checkout → Process Payment','The blue pickup sticker on the customer tile confirms the Weedmaps order — always verify before proceeding to checkout.']
+  },
+  {
+    id: 'scheduled-filter', section: 'Deliveries & Dispatch', title: 'Scheduled Order Filter (Add / Edit)',
+    keywords: 'scheduled order filter configuration add edit scheduled filter config zone order time window driver start time slotted deliveries apply filter name',
+    snippets: ['Configuration → Scheduled Filter Config → Add Filter → name → zones → order time window → driver start time → Save','Apply in Shipping & Dispatch → Slotted Deliveries → Filters → select filter name and zones → Apply.']
+  },
+  {
+    id: 'homepage-banner', section: 'Products & E-Commerce', title: 'E-Commerce: Homepage Banner (Add)',
+    keywords: 'e-commerce homepage banner add backoffice ecomm site homepage content banner promotional',
+    snippets: ['E-Commerce → Homepage → +Banner → fill all required fields → Save','All information fields must be completed before the banner can be saved.']
+  },
+  {
+    id: 'faq', section: 'Products & E-Commerce', title: 'E-Commerce: FAQ (Add / Edit)',
+    keywords: 'e-commerce FAQ add edit pages questions answers backoffice ecomm site content submit',
+    snippets: ['E-Commerce → Pages → FAQ edit tool → add or remove Q&A items → Submit','Use Add/Remove buttons to manage individual question and answer entries.']
+  },
+  {
+    id: 'privacy-policy', section: 'Products & E-Commerce', title: 'E-Commerce: Privacy Policy (Add / Edit)',
+    keywords: 'e-commerce privacy policy add edit pages action tool backoffice ecomm site content submit legal',
+    snippets: ['E-Commerce → Pages → Privacy Policy action tool → edit content → Submit']
+  },
+  {
+    id: 'terms-conditions', section: 'Products & E-Commerce', title: 'E-Commerce: Terms and Conditions (Edit)',
+    keywords: 'e-commerce terms and conditions edit pages action tool backoffice ecomm site content submit legal',
+    snippets: ['E-Commerce → Pages → Terms and Conditions action tool → edit content → Submit']
   },
   {
     id: 'tote-config', section: 'Tote & Inventory', title: 'Driver Tote Menu Configuration (New Menu)',
