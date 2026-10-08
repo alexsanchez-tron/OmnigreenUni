@@ -684,6 +684,9 @@
     <a class="nav-link" href="#" onclick="show('drop-register',this)"><span class="nav-dot"></span>Dropping a Register</a>
     <a class="nav-link" href="#" onclick="show('delete-register',this)"><span class="nav-dot"></span>Delete a Register</a>
     <a class="nav-link" href="#" onclick="show('customer-queue',this)"><span class="nav-dot"></span>Customer Queue</a>
+    <a class="nav-link" href="#" onclick="show('configure-printer',this)"><span class="nav-dot"></span>Configure Printer</a>
+    <a class="nav-link" href="#" onclick="show('return',this)"><span class="nav-dot"></span>Return</a>
+    <a class="nav-link" href="#" onclick="show('exchange',this)"><span class="nav-dot"></span>Exchange</a>
   </div>
   </div><!-- /nav-content -->
 </nav>
@@ -765,6 +768,9 @@
       <option value="drop-register">Dropping a Register</option>
       <option value="delete-register">Delete a Register</option>
       <option value="customer-queue">Customer Queue</option>
+      <option value="configure-printer">Configure Printer</option>
+      <option value="return">Return</option>
+      <option value="exchange">Exchange</option>
     </optgroup>
   </select>
   <div class="sop-nav-arrows">
@@ -902,7 +908,7 @@
       <li><span class="list-bullet bullet-num">30</span><span><strong>Edit Customer Profile</strong> — Access a customer's profile tab, click Update Profile, edit fields (phone, email, first/last name, gender, date of birth), and save by clicking Update Profile.</span></li>
     </ul>
 
-    <div class="section-label">Budtender POS — SOPs 31–38</div>
+    <div class="section-label">Budtender POS — SOPs 31–41</div>
     <ul class="policy-list">
       <li><span class="list-bullet bullet-num">31</span><span><strong>Slotted Deliveries Packing Flow</strong> — Print label first (scan field is disabled until label is printed), scan product barcodes, delete any wrongly scanned items, then click Pack Order to advance to dispatch. Bulk Print Labels available for batch processing.</span></li>
       <li><span class="list-bullet bullet-num">32</span><span><strong>Delete a Register</strong> — Permanently remove a register: Store Management &rarr; Registers &rarr; Menu &rarr; Delete Register &rarr; confirm Yes. This action is irreversible.</span></li>
@@ -912,6 +918,9 @@
       <li><span class="list-bullet bullet-num">36</span><span><strong>Configure a Terminal</strong> — Set up a new payment terminal: Store Management &rarr; Store Config &rarr; Merchant Terminal &rarr; New Terminal &rarr; fill all terminal details &rarr; toggle Enable &rarr; Save.</span></li>
       <li><span class="list-bullet bullet-num">37</span><span><strong>Linking a Terminal</strong> — Device Management → Settings → Link New Device → select terminal from dropdown → Link Device → confirm green success banner. Terminal must be powered on and on the correct network.</span></li>
       <li><span class="list-bullet bullet-num">38</span><span><strong>Customer Queue</strong> — Toggle Show Store Queue, search by first name, filter by Walk-in/Pickup/Return/Exchange, remove customers via the red icon (greyed out for customers already at a register), and add a customer by scanning the back of their CA Driver's License or other ID.</span></li>
+      <li><span class="list-bullet bullet-num">39</span><span><strong>Configure Printer Connections</strong> — Link a Bluetooth scanner via STC barcode pairing, discover available Bluetooth printers, select from the connected devices list, and run a test print to verify the connection.</span></li>
+      <li><span class="list-bullet bullet-num">40</span><span><strong>Return</strong> — Process a return from Order History: select or scan the order, click Return Items, enter Manager PIN, scan item QR codes, select return reason, choose Credit or Cash refund, and Complete Return.</span></li>
+      <li><span class="list-bullet bullet-num">41</span><span><strong>Exchange</strong> — Process an exchange from Order History: click Exchange Items, enter Manager PIN, scan items to return with a reason per item, scan replacement items (same SKU and batch only), and Confirm Exchange.</span></li>
     </ul>
 
     <div class="section-label">Training Videos</div>
@@ -4582,6 +4591,263 @@
   <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Delete a Register &middot; Budtender POS</span></div>
 </div>
 
+<!-- ══════ CONFIGURE PRINTER ══════ -->
+<div id="page-configure-printer" class="page">
+  <div class="page-header page-header-pos">
+    <div class="page-eyebrow">Budtender POS · SOP 39</div>
+    <h2 class="page-title">Configure Printer Connections</h2>
+    <p class="page-desc">How to set up printer and scanner connections in the Budtender POS — link, discover, and test printers to ensure proper functionality.</p>
+  </div>
+  <div class="page-content">
+
+    <div class="highlight-box"><strong>What this covers:</strong> Linking a scanner via Bluetooth, generating the STC pairing barcode, discovering available printers on the Bluetooth network, and running a test print to confirm the connection is working.</div>
+
+    <div class="section-label">Scanner Setup</div>
+
+    <div class="policy-title">Step 1: Access Printer Settings</div>
+    <p>Open the <strong>Printer Settings</strong> menu in the Budtender POS to access both scanner and printer connection options.</p>
+
+    <div class="policy-title">Step 2: Link Scanner</div>
+    <p>Click <strong>"Link Scanner"</strong> to begin connecting a scanner. This function works with <strong>Bluetooth-connected devices</strong> only.</p>
+
+    <div class="policy-title">Step 3: Enable Link Scanner</div>
+    <p>Click <strong>"Enable"</strong> to generate an STC barcode. Scanning this barcode resets the scanner to factory settings and enables Bluetooth pairing mode.</p>
+
+    <div class="policy-title">Step 4: Open Scanner Settings</div>
+    <p>After scanning the STC barcode, the <strong>scanner's connection status</strong> will appear in the interface — confirm it shows as connected before proceeding.</p>
+
+    <div class="section-label">Printer Setup</div>
+
+    <div class="policy-title">Step 5: Link Printer</div>
+    <p>Click <strong>"Link Printer"</strong> to begin connecting a new printer. Like the scanner, this function works with <strong>Bluetooth-connected devices</strong> only.</p>
+
+    <div class="policy-title">Step 6: Discover Available Printers</div>
+    <p>Click <strong>"Discover Printers"</strong> to search for all printers available on the device's Bluetooth network. Wait for the scan to complete.</p>
+
+    <div class="policy-title">Step 7: Select Your Printer</div>
+    <p>Review the <strong>list of connected devices</strong> in the POS app and select the correct printer from the list to link it to this device.</p>
+
+    <div class="policy-title">Step 8: Test Printer Connection</div>
+    <p>Click <strong>"Test"</strong> to send a test print and verify the printer connection is working correctly. If the test print is successful, setup is complete.</p>
+
+    <div class="section-label">Quick Reference</div>
+    <div class="step-track">
+      <div class="step-block s1"><div class="step-block-num">Printer</div><div class="step-block-name">Settings</div></div>
+      <div class="step-block s2"><div class="step-block-num">Link</div><div class="step-block-name">Scanner</div></div>
+      <div class="step-block s3"><div class="step-block-num">Enable</div><div class="step-block-name">STC Barcode</div></div>
+      <div class="step-block s4"><div class="step-block-num">Link</div><div class="step-block-name">Printer</div></div>
+      <div class="step-block s5"><div class="step-block-num">Discover</div><div class="step-block-name">Printers</div></div>
+      <div class="step-block s6"><div class="step-block-num">Select</div><div class="step-block-name">Device</div></div>
+      <div class="step-block s7"><div class="step-block-num">Test</div><div class="step-block-name">Print</div></div>
+    </div>
+
+    <div class="section-label">Key Rules</div>
+    <ul class="policy-list">
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>Both printer and scanner pairing require <strong>Bluetooth</strong> — ensure Bluetooth is enabled on the device before starting.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>The STC barcode resets the scanner to <strong>factory settings</strong> — only scan it if you intend to re-pair the device.</span></li>
+      <li><span class="list-bullet bullet-check">&#10003;</span><span>Always run a <strong>Test Print</strong> after linking to confirm the connection before going live.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>If the printer does not appear under Discover Printers, ensure it is <strong>powered on, in pairing mode, and within Bluetooth range.</strong></span></li>
+    </ul>
+
+    <div class="section-label">Video Walkthrough</div>
+    <a class="vguide-card" href="https://app.guidde.com/share/playbooks/u67huPw4shfYMm5VsFhYmw" target="_blank" rel="noopener" style="max-width:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;">
+      <div class="vguide-thumb" style="background:#111;">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
+      </div>
+      <div class="vguide-body">
+        <div class="vguide-tag">Budtender POS &middot; Hardware Setup</div>
+        <div class="vguide-title">Configure Printer Connections</div>
+        <div class="vguide-desc">Link Scanner &rarr; Enable STC barcode &rarr; Link Printer &rarr; Discover Printers &rarr; Select device &rarr; Test print to verify.</div>
+        <div class="vguide-steps">
+          <span class="vstep">1 Printer Settings</span>
+          <span class="vstep">2 Link Scanner</span>
+          <span class="vstep">3 Link Printer</span>
+          <span class="vstep">4 Discover &amp; Test</span>
+        </div>
+        <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+    </a>
+
+  </div>
+  <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Configure Printer Connections &middot; Budtender POS</span></div>
+</div>
+
+<!-- ══════ RETURN ══════ -->
+<div id="page-return" class="page">
+  <div class="page-header page-header-pos">
+    <div class="page-eyebrow">Budtender POS · SOP 40</div>
+    <h2 class="page-title">Return</h2>
+    <p class="page-desc">How to process a return transaction in the Budtender POS — locate the original order, scan items, select a return reason, and choose credit or cash.</p>
+  </div>
+  <div class="page-content">
+
+    <div class="highlight-box"><strong>What this covers:</strong> Completing a return from within a customer's order history — scanning items to return, selecting the return reason, choosing the refund method (credit or cash), and finalizing with "Complete Return."</div>
+
+    <div class="non-neg-strip">
+      <div class="non-neg-strip-title">&#9888; Manager Authorization Required</div>
+      <div class="non-neg-item"><div class="non-neg-icon">!</div>A <strong>Manager PIN is required</strong> to proceed with any return — you cannot bypass this step.</div>
+      <div class="non-neg-item"><div class="non-neg-icon">!</div>Select the return reason as <strong>accurately as possible</strong> — this directly impacts inventory and reporting.</div>
+    </div>
+
+    <div class="section-label">Step-by-Step</div>
+
+    <div class="policy-title">Step 1: Order History</div>
+    <p>Within the customer's account, select the <strong>Order History</strong> tab at the top of the screen.</p>
+
+    <div class="policy-title">Step 2: Select Order</div>
+    <p>Locate the desired order by either:</p>
+    <div class="two-col">
+      <div class="mini-card"><div class="mini-card-label">Search by Order ID</div><div class="mini-card-value">Type the Order ID number into the search field to pull up the specific transaction.</div></div>
+      <div class="mini-card"><div class="mini-card-label">Scan Receipt Barcode</div><div class="mini-card-value">Use the scanner to scan the barcode on the customer's receipt — the order will auto-populate.</div></div>
+    </div>
+
+    <div class="policy-title">Step 3: Return Items</div>
+    <p>Click <strong>"Return Items"</strong> in the top right of the order detail screen to initiate the return flow.</p>
+
+    <div class="policy-title">Step 4: Manager PIN</div>
+    <p>A <strong>Manager PIN</strong> is required to proceed. Enter the manager's PIN to authorize and continue.</p>
+
+    <div class="policy-title">Step 5: Scan Return Items</div>
+    <p>Scan the <strong>QR code</strong> on each item being returned. The corresponding checkboxes will automatically be marked as each item is scanned.</p>
+
+    <div class="policy-title">Step 6: Select Return Reason</div>
+    <p>Choose the <strong>return reason</strong> that most closely matches why the return is being processed. In the <strong>bottom left corner</strong>, select the refund method:</p>
+    <div class="two-col">
+      <div class="mini-card"><div class="mini-card-label">Credit</div><div class="mini-card-value">Refund returned to the customer's wallet as store credit.</div></div>
+      <div class="mini-card"><div class="mini-card-label">Cash</div><div class="mini-card-value">Refund issued as cash — requires manager approval and documentation.</div></div>
+    </div>
+
+    <div class="policy-title">Step 7: Complete Return</div>
+    <p>After selecting the return reason and refund method, click <strong>"Complete Return"</strong> to finalize the transaction.</p>
+
+    <div class="section-label">Quick Reference</div>
+    <div class="step-track">
+      <div class="step-block s1"><div class="step-block-num">Order</div><div class="step-block-name">History</div></div>
+      <div class="step-block s2"><div class="step-block-num">Select</div><div class="step-block-name">Order</div></div>
+      <div class="step-block s3"><div class="step-block-num">Return</div><div class="step-block-name">Items</div></div>
+      <div class="step-block s4"><div class="step-block-num">Manager</div><div class="step-block-name">PIN</div></div>
+      <div class="step-block s5"><div class="step-block-num">Scan</div><div class="step-block-name">Items</div></div>
+      <div class="step-block s6"><div class="step-block-num">Reason</div><div class="step-block-name">+ Method</div></div>
+      <div class="step-block s7"><div class="step-block-num">Complete</div><div class="step-block-name">Return</div></div>
+    </div>
+
+    <div class="section-label">Key Rules</div>
+    <ul class="policy-list">
+      <li><span class="list-bullet bullet-x">&#10005;</span><span>Never process a return without a <strong>valid Manager PIN</strong> — the system will not allow it.</span></li>
+      <li><span class="list-bullet bullet-check">&#10003;</span><span>Select the return reason as <strong>accurately as possible</strong> — this affects inventory records and refund tracking.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>Scanning the QR code on each item automatically checks them off — no manual selection needed.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>The refund method (Credit or Cash) is selected in the <strong>bottom left corner</strong> before completing.</span></li>
+    </ul>
+
+    <div class="section-label">Video Walkthrough</div>
+    <a class="vguide-card" href="https://app.guidde.com/share/playbooks/gPNWdmqywGJvEg7gnV2Uzn" target="_blank" rel="noopener" style="max-width:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;">
+      <div class="vguide-thumb" style="background:#111;">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
+      </div>
+      <div class="vguide-body">
+        <div class="vguide-tag">Budtender POS &middot; Transactions</div>
+        <div class="vguide-title">Return</div>
+        <div class="vguide-desc">Order History &rarr; Select Order &rarr; Return Items &rarr; Manager PIN &rarr; Scan items &rarr; Return reason &rarr; Credit or Cash &rarr; Complete Return.</div>
+        <div class="vguide-steps">
+          <span class="vstep">1 Order History</span>
+          <span class="vstep">2 Return Items</span>
+          <span class="vstep">3 Manager PIN</span>
+          <span class="vstep">4 Scan &amp; Complete</span>
+        </div>
+        <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+    </a>
+
+  </div>
+  <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Return &middot; Budtender POS</span></div>
+</div>
+
+<!-- ══════ EXCHANGE ══════ -->
+<div id="page-exchange" class="page">
+  <div class="page-header page-header-pos">
+    <div class="page-eyebrow">Budtender POS · SOP 41</div>
+    <h2 class="page-title">Exchange</h2>
+    <p class="page-desc">How to process an exchange transaction in the Budtender POS — scan items to return, select reasons, then scan the replacement items from the same SKU and batch.</p>
+  </div>
+  <div class="page-content">
+
+    <div class="highlight-box"><strong>What this covers:</strong> Completing an exchange from within a customer's order history — scanning the items being returned, selecting a return reason per item, then scanning replacement items (same SKU and batch only), and confirming the exchange.</div>
+
+    <div class="non-neg-strip">
+      <div class="non-neg-strip-title">&#9888; Manager Authorization Required</div>
+      <div class="non-neg-item"><div class="non-neg-icon">!</div>A <strong>Manager PIN is required</strong> to proceed — you cannot bypass this step.</div>
+      <div class="non-neg-item"><div class="non-neg-icon">!</div>Replacement items must be from the <strong>same SKU and batch</strong> as the original item — cross-SKU or cross-batch exchanges are not permitted.</div>
+      <div class="non-neg-item"><div class="non-neg-icon">!</div>A <strong>return reason is required per item</strong> — select as accurately as possible for every item being exchanged.</div>
+    </div>
+
+    <div class="section-label">Step-by-Step</div>
+
+    <div class="policy-title">Step 1: Order History</div>
+    <p>While on the customer's profile, select the <strong>Order History</strong> tab at the top of the screen.</p>
+
+    <div class="policy-title">Step 2: Exchange Items</div>
+    <p>Locate the desired order and click <strong>"Exchange Items"</strong> to initiate the exchange flow for that transaction.</p>
+
+    <div class="policy-title">Step 3: Manager PIN</div>
+    <p>A <strong>Manager PIN</strong> is required to proceed. Enter the manager's PIN to authorize and continue.</p>
+
+    <div class="policy-title">Step 4: Scan Exchange Items</div>
+    <p>Scan the items from the completed order that the customer wants to exchange. Scanned items will be automatically checked off in the interface.</p>
+
+    <div class="policy-title">Step 5: Select Return Reason</div>
+    <p>After items are scanned and checked off, a <strong>return reason is required for each item</strong>. Select the reason that most accurately describes why each item is being exchanged.</p>
+
+    <div class="policy-title">Step 6: Next</div>
+    <p>Click <strong>"Next"</strong> at the bottom of the page to proceed to the replacement item scanning screen.</p>
+
+    <div class="policy-title">Step 7: Scan New Items</div>
+    <p>Scan all <strong>replacement items</strong>. Important: only items from the <strong>same SKU and batch</strong> as the original items are permitted for exchange.</p>
+
+    <div class="policy-title">Step 8: Confirm Exchange</div>
+    <p>Ensure all items are correct, then click <strong>"Confirm Exchange"</strong> at the bottom of the page to complete the transaction.</p>
+
+    <div class="section-label">Quick Reference</div>
+    <div class="step-track">
+      <div class="step-block s1"><div class="step-block-num">Order</div><div class="step-block-name">History</div></div>
+      <div class="step-block s2"><div class="step-block-num">Exchange</div><div class="step-block-name">Items</div></div>
+      <div class="step-block s3"><div class="step-block-num">Manager</div><div class="step-block-name">PIN</div></div>
+      <div class="step-block s4"><div class="step-block-num">Scan</div><div class="step-block-name">Return Items</div></div>
+      <div class="step-block s5"><div class="step-block-num">Reason</div><div class="step-block-name">Per Item</div></div>
+      <div class="step-block s6"><div class="step-block-num">Scan New</div><div class="step-block-name">Items</div></div>
+      <div class="step-block s7"><div class="step-block-num">Confirm</div><div class="step-block-name">Exchange</div></div>
+    </div>
+
+    <div class="section-label">Key Rules</div>
+    <ul class="policy-list">
+      <li><span class="list-bullet bullet-x">&#10005;</span><span>Replacement items must come from the <strong>same SKU and batch</strong> — cross-SKU exchanges are blocked by the system.</span></li>
+      <li><span class="list-bullet bullet-x">&#10005;</span><span>A <strong>return reason is required per item</strong> — the exchange cannot proceed without one for each scanned item.</span></li>
+      <li><span class="list-bullet bullet-check">&#10003;</span><span>Scanning items automatically checks them off — no manual selection needed.</span></li>
+      <li><span class="list-bullet bullet-arrow">&#8594;</span><span>If a replacement item doesn't scan, verify it is from the <strong>same SKU and batch</strong> as the original purchase.</span></li>
+    </ul>
+
+    <div class="section-label">Video Walkthrough</div>
+    <a class="vguide-card" href="https://app.guidde.com/share/playbooks/istdX6b87R3JZUAi3CviiB" target="_blank" rel="noopener" style="max-width:360px;display:flex;flex-direction:column;text-decoration:none;color:inherit;">
+      <div class="vguide-thumb" style="background:#111;">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
+      </div>
+      <div class="vguide-body">
+        <div class="vguide-tag">Budtender POS &middot; Transactions</div>
+        <div class="vguide-title">Exchange</div>
+        <div class="vguide-desc">Order History &rarr; Exchange Items &rarr; Manager PIN &rarr; Scan return items &rarr; Reason per item &rarr; Scan new items (same SKU/batch) &rarr; Confirm Exchange.</div>
+        <div class="vguide-steps">
+          <span class="vstep">1 Order History</span>
+          <span class="vstep">2 Exchange Items</span>
+          <span class="vstep">3 Manager PIN</span>
+          <span class="vstep">4 Scan &amp; Confirm</span>
+        </div>
+        <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      </div>
+    </a>
+
+  </div>
+  <div class="page-footer"><span>Omnigreen Backoffice Operations Handbook</span><span>Exchange &middot; Budtender POS</span></div>
+</div>
+
 <!-- ══════ TRAINING VIDEOS ══════ -->
 <div id="page-training-videos" class="page">
   <div class="page-header page-header-pos">
@@ -5595,7 +5861,8 @@ const SOP_ORDER = [
   'training-videos',
   'welcome-flag','welcome-login','welcome-customer','welcome-medical','welcome-edit-profile',
   'slotted-packing','linking-terminal','configure-terminal',
-  'create-register','open-register','drop-register','delete-register','customer-queue'
+  'create-register','open-register','drop-register','delete-register','customer-queue',
+  'configure-printer','return','exchange'
 ];
 
 // Map page ID → section div ID for auto-expand on navigation
@@ -5618,7 +5885,8 @@ const PAGE_SECTION_MAP = {
   'welcome-medical':'ns-welcome','welcome-edit-profile':'ns-welcome',
   'slotted-packing':'ns-pos','linking-terminal':'ns-pos','configure-terminal':'ns-pos',
   'create-register':'ns-pos','open-register':'ns-pos','drop-register':'ns-pos',
-  'delete-register':'ns-pos','customer-queue':'ns-pos'
+  'delete-register':'ns-pos','customer-queue':'ns-pos',
+  'configure-printer':'ns-pos','return':'ns-pos','exchange':'ns-pos'
 };
 
 let currentPageId = 'cover';
@@ -5796,6 +6064,21 @@ const SEARCH_INDEX = [
     id: 'customer-queue', section: 'Budtender POS', title: 'Customer Queue',
     keywords: 'customer queue show store queue toggle walk-in pickup return exchange filter remove customer red icon reason yes remove customer add customer ID scan California drivers license back of ID register queue line manual search first name',
     snippets: ['Navigate the customer queue — toggle, filter by Walk-in/Pickup/Return, remove with reason','Scan back of CA Driver\'s License to instantly pull up customer on a register']
+  },
+  {
+    id: 'configure-printer', section: 'Budtender POS', title: 'Configure Printer Connections',
+    keywords: 'configure printer scanner bluetooth link scanner enable STC barcode factory settings pairing link printer discover printers bluetooth network test print printer connection hardware setup peripheral device',
+    snippets: ['Link Scanner → Enable → STC barcode resets scanner to factory settings and enables Bluetooth pairing','Discover Printers on the Bluetooth network → select device → Test print to confirm connection']
+  },
+  {
+    id: 'return', section: 'Budtender POS', title: 'Return',
+    keywords: 'return transaction order history order ID receipt barcode scan return items manager pin QR code scan items return reason credit cash complete return refund POS budtender',
+    snippets: ['Order History → Select order → Return Items → Manager PIN → Scan item QR codes → Select reason → Credit or Cash → Complete Return','Manager PIN required — cannot be bypassed. Select return reason accurately for inventory tracking.']
+  },
+  {
+    id: 'exchange', section: 'Budtender POS', title: 'Exchange',
+    keywords: 'exchange transaction order history exchange items manager pin scan exchange items return reason per item next scan new items same SKU same batch confirm exchange POS budtender replacement',
+    snippets: ['Order History → Exchange Items → Manager PIN → Scan return items → Reason per item → Scan new items (same SKU/batch) → Confirm Exchange','Replacement items must be same SKU and batch — cross-SKU exchanges are not permitted by the system.']
   },
   {
     id: 'delete-register', section: 'Budtender POS', title: 'Delete a Register',
