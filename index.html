@@ -511,25 +511,23 @@
   }
 
   /* ── COMING SOON (unverified tiles) ── */
+  /* Unverified tiles: hidden from regular users */
   .vguide-card[data-unverified="true"] {
+    display: none;
+  }
+  /* Admin mode: show unverified tiles with Coming Soon badge */
+  body.admin-mode .vguide-card[data-unverified="true"] {
+    display: flex; flex-direction: column;
     position: relative; pointer-events: none; cursor: default;
     opacity: 0.55; filter: grayscale(60%);
   }
-  .vguide-card[data-unverified="true"]::after {
+  body.admin-mode .vguide-card[data-unverified="true"]::after {
     content: "🔒 Coming Soon";
     position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
     background: rgba(0,0,0,0.78); color: #fff;
     font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
     padding: 7px 14px; border-radius: 20px; white-space: nowrap;
     pointer-events: none;
-  }
-  /* Admin mode: show everything normally */
-  body.admin-mode .vguide-card[data-unverified="true"] {
-    pointer-events: auto; cursor: pointer;
-    opacity: 1; filter: none;
-  }
-  body.admin-mode .vguide-card[data-unverified="true"]::after {
-    display: none;
   }
   /* Admin badge in sidebar */
   #admin-badge {
@@ -633,8 +631,7 @@
 
   <div class="nav-group-label collapsed" onclick="toggleSection('ns-driver',this)">Driver App<span class="nav-chevron">▾</span></div>
   <div class="nav-section collapsed" id="ns-driver">
-    <a class="nav-link" href="#" onclick="show('driver-app',this)"><span class="nav-dot"></span>Credits, Ratings &amp; On Hold</a>
-    <a class="nav-link" href="#" onclick="show('driver-app',this)"><span class="nav-dot"></span>Order Queue &amp; Notes</a>
+    <a class="nav-link" href="#" onclick="show('driver-app',this)"><span class="nav-dot"></span>Credits, Ratings, On Hold &amp; Order Queue</a>
     <a class="nav-link" href="#" onclick="show('driver-new-user',this)"><span class="nav-dot"></span>(New User) Register &amp; Start Shift</a>
     <a class="nav-link" href="#" onclick="show('driver-existing-user',this)"><span class="nav-dot"></span>(Existing User) Login &amp; Start Shift</a>
     <a class="nav-link" href="#" onclick="show('driver-receive-pack',this)"><span class="nav-dot"></span>Process: Receive &amp; Pack Order</a>
@@ -655,9 +652,7 @@
 
   <div class="nav-group-label collapsed" onclick="toggleSection('ns-acs',this)">Automated Customer Service<span class="nav-chevron">▾</span></div>
   <div class="nav-section collapsed" id="ns-acs">
-    <a class="nav-link" href="#" onclick="show('acs',this)"><span class="nav-dot"></span>ACS Overview &amp; Rules</a>
-    <a class="nav-link" href="#" onclick="show('acs',this)"><span class="nav-dot"></span>Customer Scoring</a>
-    <a class="nav-link" href="#" onclick="show('acs',this)"><span class="nav-dot"></span>ACS in Backoffice</a>
+    <a class="nav-link" href="#" onclick="show('acs',this)"><span class="nav-dot"></span>ACS Overview, Scoring &amp; Rules</a>
   </div>
 
   <div class="nav-group-label collapsed" onclick="toggleSection('ns-ecomm',this)">Products &amp; E-Commerce<span class="nav-chevron">▾</span></div>
@@ -760,7 +755,6 @@
       <option value="report-orders">Orders Look Up</option>
     </optgroup>
     <optgroup label="— Automated Customer Service —">
-      <option value="defective-credit">Defective Reporting &amp; Admin Credit</option>
       <option value="acs">ACS Overview, Rules, Scoring &amp; Backoffice</option>
     </optgroup>
     <optgroup label="— Products &amp; E-Commerce —">
@@ -895,81 +889,82 @@
     <ul class="policy-list">
       <li><span class="list-bullet bullet-num">15</span><span><strong>Inventory Summary: Bulk Transfers &amp; Restore Stock</strong> — Two flows: (1) Bulk Transfer — select room, toggle product, Bulk Transfer Units, choose destination room, enter quantity, Transfer. (2) Restore Stock — action menu &rarr; Restore Stock &rarr; scan product &rarr; select Sold or Adjusted column &rarr; enter quantity &rarr; choose reason &rarr; leave note &rarr; Restore Stock.</span></li>
       <li><span class="list-bullet bullet-num">16</span><span><strong>Bin Management: Restore Unit (Into MP)</strong> — Restore a scanned unit back into a Master Pack: Bin Management &rarr; Restore Units &rarr; Start Restore &rarr; scan Master Pack label &rarr; scan unit barcode &rarr; confirm &rarr; success banner confirms restoration.</span></li>
-      <li><span class="list-bullet bullet-num">17</span><span><strong>Tote Reconciliation</strong> — 4-step process: (1) Reconcile — visually verify quantities and Commit all adjustments, (2) Pull Out — scan flagged items until 100%, (3) Replenish — scan pick list items until 100%, (4) Final Review — confirm tote code and click Complete. Includes Guidde video walkthrough.</span></li>
+      <li><span class="list-bullet bullet-num">17</span><span><strong>Bin Management: Add or Remove Master Pack</strong> — Add a Master Pack to a bin or remove it via Bin Management. Also supports binning directly from the Masterpack Listing. Each action updates bin assignments in real time.</span></li>
+      <li><span class="list-bullet bullet-num">18</span><span><strong>Tote Reconciliation</strong> — 4-step process: (1) Reconcile — visually verify quantities and Commit all adjustments, (2) Pull Out — scan flagged items until 100%, (3) Replenish — scan pick list items until 100%, (4) Final Review — confirm tote code and click Complete. Includes Guidde video walkthrough.</span></li>
     </ul>
 
-    <div class="section-label">Driver App — SOPs 18–22</div>
+    <div class="section-label">Driver App — SOPs 19–23</div>
     <ul class="policy-list">
-      <li><span class="list-bullet bullet-num">18</span><span><strong>Credits, Ratings, On Hold, Order Queue & Notes</strong> — Give customer credits on a current order (Maximum vs Total Available), rate customers after delivery (1–2 stars require notes), put an order on hold with a documented reason, read Order Queue status tags (Upcoming/Delivered/On Hold/Cancelled), and access Customer Notes from the Profile tab.</span></li>
-      <li><span class="list-bullet bullet-num">19</span><span><strong>(New User) Register, Login & Start Shift</strong> — Register a new driver using the Operator code, mobile number, and invite code. Clock in to an assigned shift slot, go online after inventory is assigned, then swipe to accept the first order.</span></li>
-      <li><span class="list-bullet bullet-num">20</span><span><strong>(Existing User) Login & Start Shift</strong> — Log in with auto-populated credentials, regenerate and enter your OTP, clock in to your assigned shift, go online, and accept your first routed order.</span></li>
-      <li><span class="list-bullet bullet-num">21</span><span><strong>Process: Receive & Pack Order</strong> — Accept the incoming order, review order info and customer profile (ID, selfie, medical rec), view items, select the correct exit bag, scan or type each Master Pack number to pack the tote, click Successfully Packed, then swipe to complete delivery within 100 feet of the address.</span></li>
-      <li><span class="list-bullet bullet-num">22</span><span><strong>Route to Hub (End Shift)</strong> — When the shift ends, drivers are prompted to RTH with the cash owed displayed. Upon arriving at the hub and returning cash and totes, swipe right to clock out of the app.</span></li>
+      <li><span class="list-bullet bullet-num">19</span><span><strong>Credits, Ratings, On Hold, Order Queue & Notes</strong> — Give customer credits on a current order (Maximum vs Total Available), rate customers after delivery (1–2 stars require notes), put an order on hold with a documented reason, read Order Queue status tags (Upcoming/Delivered/On Hold/Cancelled), and access Customer Notes from the Profile tab.</span></li>
+      <li><span class="list-bullet bullet-num">20</span><span><strong>(New User) Register, Login & Start Shift</strong> — Register a new driver using the Operator code, mobile number, and invite code. Clock in to an assigned shift slot, go online after inventory is assigned, then swipe to accept the first order.</span></li>
+      <li><span class="list-bullet bullet-num">21</span><span><strong>(Existing User) Login & Start Shift</strong> — Log in with auto-populated credentials, regenerate and enter your OTP, clock in to your assigned shift, go online, and accept your first routed order.</span></li>
+      <li><span class="list-bullet bullet-num">22</span><span><strong>Process: Receive & Pack Order</strong> — Accept the incoming order, review order info and customer profile (ID, selfie, medical rec), view items, select the correct exit bag, scan or type each Master Pack number to pack the tote, click Successfully Packed, then swipe to complete delivery within 100 feet of the address.</span></li>
+      <li><span class="list-bullet bullet-num">23</span><span><strong>Route to Hub (End Shift)</strong> — When the shift ends, drivers are prompted to RTH with the cash owed displayed. Upon arriving at the hub and returning cash and totes, swipe right to clock out of the app.</span></li>
     </ul>
 
     <div class="section-label">Automated Customer Service — SOP 23</div>
     <ul class="policy-list">
-      <li><span class="list-bullet bullet-num">23</span><span><strong>ACS Overview & Rules</strong> — How the automated self-service system works: access points (Order Confirmation + My Orders), 24-hour trigger window, issue categories (Product/Driver/Other), customer scoring (Fraudster ≤6.99 vs Default 7–15.99), all 8 Rule_Configs (refund%, bonus, tax, waive delivery, etc.), score deduction table (−1 to −40 for consecutive submissions), and Backoffice Report → ACS Resolution view.</span></li>
+      <li><span class="list-bullet bullet-num">24</span><span><strong>ACS Overview & Rules</strong> — How the automated self-service system works: access points (Order Confirmation + My Orders), 24-hour trigger window, issue categories (Product/Driver/Other), customer scoring (Fraudster ≤6.99 vs Default 7–15.99), all 8 Rule_Configs (refund%, bonus, tax, waive delivery, etc.), score deduction table (−1 to −40 for consecutive submissions), and Backoffice Report → ACS Resolution view.</span></li>
     <div class="section-label">Admin & Configuration — SOPs 24–26</div>
     <ul class="policy-list">
-      <li><span class="list-bullet bullet-num">24</span><span><strong>New Users (Invite)</strong> — Invite a new user: Admin &rarr; Users &rarr; Invite New User &rarr; fill data &rarr; select role and location(s) &rarr; Save Changes triggers the invitation email. User registers via emailed link. Manage existing users with filters and enable/disable via action menu.</span></li>
-      <li><span class="list-bullet bullet-num">25</span><span><strong>Set &amp; Reset User PIN</strong> — Set or change your 4-digit PIN via Backoffice Settings &rarr; New PIN &rarr; Confirm &rarr; Update PIN. Forgotten PIN: use the Budtender POS app &rarr; Forgot your PIN &rarr; enter and confirm new PIN &rarr; Reset PIN.</span></li>
-      <li><span class="list-bullet bullet-num">26</span><span><strong>User Permissions</strong> — Navigate Admin &rarr; Users to find and manage individual user permissions. Set access by E-Comm store, store location, and hub. Assign No Access, View Only, or View-Edit per permission, then Update and confirm.</span></li>
+      <li><span class="list-bullet bullet-num">25</span><span><strong>New Users (Invite)</strong> — Invite a new user: Admin &rarr; Users &rarr; Invite New User &rarr; fill data &rarr; select role and location(s) &rarr; Save Changes triggers the invitation email. User registers via emailed link. Manage existing users with filters and enable/disable via action menu.</span></li>
+      <li><span class="list-bullet bullet-num">26</span><span><strong>Set &amp; Reset User PIN</strong> — Set or change your 4-digit PIN via Backoffice Settings &rarr; New PIN &rarr; Confirm &rarr; Update PIN. Forgotten PIN: use the Budtender POS app &rarr; Forgot your PIN &rarr; enter and confirm new PIN &rarr; Reset PIN.</span></li>
+      <li><span class="list-bullet bullet-num">27</span><span><strong>User Permissions</strong> — Navigate Admin &rarr; Users to find and manage individual user permissions. Set access by E-Comm store, store location, and hub. Assign No Access, View Only, or View-Edit per permission, then Update and confirm.</span></li>
     </ul>
 
     <div class="section-label">Reports — SOP 27</div>
     <ul class="policy-list">
-      <li><span class="list-bullet bullet-num">27</span><span><strong>Orders Look Up</strong> — Navigate Report &rarr; Orders to search the live order report by Order ID, customer name, or customer ID. Filter by creation timeframe or scheduled order window, then click Apply to generate results. Use Configure to adjust displayed columns.</span></li>
+      <li><span class="list-bullet bullet-num">28</span><span><strong>Orders Look Up</strong> — Navigate Report &rarr; Orders to search the live order report by Order ID, customer name, or customer ID. Filter by creation timeframe or scheduled order window, then click Apply to generate results. Use Configure to adjust displayed columns.</span></li>
     </ul>
 
     <div class="section-label">Products & E-Commerce — SOPs 28–29</div>
     <ul class="policy-list">
-      <li><span class="list-bullet bullet-num">28</span><span><strong>Creating Categories & Subcategories</strong> — Create product categories in /product-configuration, pin subcategories, and build SEO category pages in /shop-category. Slug sets the URL and cannot be changed after save. Covers banner uploads, architecture best practices (broad categories → subcategories → Web Merch for granular grouping).</span></li>
-      <li><span class="list-bullet bullet-num">29</span><span><strong>Customer Order Placement (E-Comm)</strong> — How a customer places an order through the e-commerce site: sign in with phone verification, select items, add to cart, checkout, choose payment method (Cash, Debit in person, or Stronghold online), and receive order confirmation.</span></li>
+      <li><span class="list-bullet bullet-num">29</span><span><strong>Creating Categories & Subcategories</strong> — Create product categories in /product-configuration, pin subcategories, and build SEO category pages in /shop-category. Slug sets the URL and cannot be changed after save. Covers banner uploads, architecture best practices (broad categories → subcategories → Web Merch for granular grouping).</span></li>
+      <li><span class="list-bullet bullet-num">30</span><span><strong>Customer Order Placement (E-Comm)</strong> — How a customer places an order through the e-commerce site: sign in with phone verification, select items, add to cart, checkout, choose payment method (Cash, Debit in person, or Stronghold online), and receive order confirmation.</span></li>
     </ul>
 
     <div class="section-label">Welcome App — SOPs 30–34</div>
     <ul class="policy-list">
-      <li><span class="list-bullet bullet-num">30</span><span><strong>Adding a Flag to a Customer Profile</strong> — Flag a customer for Destruction of Property, Theft, Unlawful Distribution, Violence, or Other. Requires description, priority level, and confirmation. View full Flag History from the customer profile.</span></li>
-      <li><span class="list-bullet bullet-num">31</span><span><strong>Log-in & Check-in Flow</strong> — Log in to the Welcome App at welcome.omnigreen.ai, review the queue, add a client from search, and scan their ID (Driver License, California ID, or Other) to complete check-in.</span></li>
-      <li><span class="list-bullet bullet-num">32</span><span><strong>Customer: Look Up, Add & Remove</strong> — Add a customer by scanning their ID (DL, CA ID, Passport, International), select purpose of visit (Walk-in/Pickup/Return/Exchange), check in, search by name, and remove from queue with a documented reason.</span></li>
-      <li><span class="list-bullet bullet-num">33</span><span><strong>Adding/Editing Medical Info</strong> — Access Profile Details → Update Profile → toggle Medical Customer ON → select medical type → enter Medical ID number and expiration date → click Update Profile to save. Do not approve expired documents.</span></li>
-      <li><span class="list-bullet bullet-num">34</span><span><strong>Edit Customer Profile</strong> — Access a customer's profile tab, click Update Profile, edit fields (phone, email, first/last name, gender, date of birth), and save by clicking Update Profile.</span></li>
+      <li><span class="list-bullet bullet-num">31</span><span><strong>Adding a Flag to a Customer Profile</strong> — Flag a customer for Destruction of Property, Theft, Unlawful Distribution, Violence, or Other. Requires description, priority level, and confirmation. View full Flag History from the customer profile.</span></li>
+      <li><span class="list-bullet bullet-num">32</span><span><strong>Log-in & Check-in Flow</strong> — Log in to the Welcome App at welcome.omnigreen.ai, review the queue, add a client from search, and scan their ID (Driver License, California ID, or Other) to complete check-in.</span></li>
+      <li><span class="list-bullet bullet-num">33</span><span><strong>Customer: Look Up, Add & Remove</strong> — Add a customer by scanning their ID (DL, CA ID, Passport, International), select purpose of visit (Walk-in/Pickup/Return/Exchange), check in, search by name, and remove from queue with a documented reason.</span></li>
+      <li><span class="list-bullet bullet-num">34</span><span><strong>Adding/Editing Medical Info</strong> — Access Profile Details → Update Profile → toggle Medical Customer ON → select medical type → enter Medical ID number and expiration date → click Update Profile to save. Do not approve expired documents.</span></li>
+      <li><span class="list-bullet bullet-num">35</span><span><strong>Edit Customer Profile</strong> — Access a customer's profile tab, click Update Profile, edit fields (phone, email, first/last name, gender, date of birth), and save by clicking Update Profile.</span></li>
     </ul>
 
     <div class="section-label">Budtender POS — SOPs 35–46</div>
     <ul class="policy-list">
-      <li><span class="list-bullet bullet-num">35</span><span><strong>Slotted Deliveries Packing Flow</strong> — Print label first (scan field is disabled until label is printed), scan product barcodes, delete any wrongly scanned items, then click Pack Order to advance to dispatch. Bulk Print Labels available for batch processing.</span></li>
-      <li><span class="list-bullet bullet-num">36</span><span><strong>Delete a Register</strong> — Permanently remove a register: Store Management &rarr; Registers &rarr; Menu &rarr; Delete Register &rarr; confirm Yes. This action is irreversible.</span></li>
-      <li><span class="list-bullet bullet-num">37</span><span><strong>Create a Register</strong> — Set up a new register: Store Management &rarr; Registers &rarr; New Register &rarr; fill in Register Name, Room, Terminal Name/ID, and min/max balance thresholds &rarr; Create Register.</span></li>
-      <li><span class="list-bullet bullet-num">38</span><span><strong>Open a Register &amp; Assign to Budtender</strong> — Open a register for a shift: Store Management &rarr; Registers &rarr; Open Register &rarr; assign users &rarr; fill required info &rarr; enter Manager PIN to authorize.</span></li>
-      <li><span class="list-bullet bullet-num">39</span><span><strong>Dropping a Register</strong> — Remove cash from a register mid-shift: Store Management &rarr; Registers &rarr; select the register &rarr; Drop &rarr; confirm the amount &rarr; Submit Drop.</span></li>
-      <li><span class="list-bullet bullet-num">40</span><span><strong>Configure a Terminal</strong> — Set up a new payment terminal: Store Management &rarr; Store Config &rarr; Merchant Terminal &rarr; New Terminal &rarr; fill all terminal details &rarr; toggle Enable &rarr; Save.</span></li>
-      <li><span class="list-bullet bullet-num">41</span><span><strong>Linking a Terminal</strong> — Device Management → Settings → Link New Device → select terminal from dropdown → Link Device → confirm green success banner. Terminal must be powered on and on the correct network.</span></li>
-      <li><span class="list-bullet bullet-num">42</span><span><strong>Customer Queue</strong> — Toggle Show Store Queue, search by first name, filter by Walk-in/Pickup/Return/Exchange, remove customers via the red icon (greyed out for customers already at a register), and add a customer by scanning the back of their CA Driver's License or other ID.</span></li>
-      <li><span class="list-bullet bullet-num">43</span><span><strong>Configure Printer Connections</strong> — Link a Bluetooth scanner via STC barcode pairing, discover available Bluetooth printers, select from the connected devices list, and run a test print to verify the connection.</span></li>
-      <li><span class="list-bullet bullet-num">44</span><span><strong>Return</strong> — Process a return from Order History: select or scan the order, click Return Items, enter Manager PIN, scan item QR codes, select return reason, choose Credit or Cash refund, and Complete Return.</span></li>
-      <li><span class="list-bullet bullet-num">45</span><span><strong>Exchange</strong> — Process an exchange from Order History: click Exchange Items, enter Manager PIN, scan items to return with a reason per item, scan replacement items (same SKU and batch only), and Confirm Exchange.</span></li>
-      <li><span class="list-bullet bullet-num">46</span><span><strong>Complete Weedmaps Pickup Order</strong> — Select Pickup, choose the customer's order tile, add products, notify the customer (text + email), confirm notification, locate the customer by phone with the blue pickup sticker, review the auto-populated cart, add any additional items, and process payment through Checkout.</span></li>
+      <li><span class="list-bullet bullet-num">36</span><span><strong>Slotted Deliveries Packing Flow</strong> — Print label first (scan field is disabled until label is printed), scan product barcodes, delete any wrongly scanned items, then click Pack Order to advance to dispatch. Bulk Print Labels available for batch processing.</span></li>
+      <li><span class="list-bullet bullet-num">37</span><span><strong>Delete a Register</strong> — Permanently remove a register: Store Management &rarr; Registers &rarr; Menu &rarr; Delete Register &rarr; confirm Yes. This action is irreversible.</span></li>
+      <li><span class="list-bullet bullet-num">38</span><span><strong>Create a Register</strong> — Set up a new register: Store Management &rarr; Registers &rarr; New Register &rarr; fill in Register Name, Room, Terminal Name/ID, and min/max balance thresholds &rarr; Create Register.</span></li>
+      <li><span class="list-bullet bullet-num">39</span><span><strong>Open a Register &amp; Assign to Budtender</strong> — Open a register for a shift: Store Management &rarr; Registers &rarr; Open Register &rarr; assign users &rarr; fill required info &rarr; enter Manager PIN to authorize.</span></li>
+      <li><span class="list-bullet bullet-num">40</span><span><strong>Dropping a Register</strong> — Remove cash from a register mid-shift: Store Management &rarr; Registers &rarr; select the register &rarr; Drop &rarr; confirm the amount &rarr; Submit Drop.</span></li>
+      <li><span class="list-bullet bullet-num">41</span><span><strong>Configure a Terminal</strong> — Set up a new payment terminal: Store Management &rarr; Store Config &rarr; Merchant Terminal &rarr; New Terminal &rarr; fill all terminal details &rarr; toggle Enable &rarr; Save.</span></li>
+      <li><span class="list-bullet bullet-num">42</span><span><strong>Linking a Terminal</strong> — Device Management → Settings → Link New Device → select terminal from dropdown → Link Device → confirm green success banner. Terminal must be powered on and on the correct network.</span></li>
+      <li><span class="list-bullet bullet-num">43</span><span><strong>Customer Queue</strong> — Toggle Show Store Queue, search by first name, filter by Walk-in/Pickup/Return/Exchange, remove customers via the red icon (greyed out for customers already at a register), and add a customer by scanning the back of their CA Driver's License or other ID.</span></li>
+      <li><span class="list-bullet bullet-num">44</span><span><strong>Configure Printer Connections</strong> — Link a Bluetooth scanner via STC barcode pairing, discover available Bluetooth printers, select from the connected devices list, and run a test print to verify the connection.</span></li>
+      <li><span class="list-bullet bullet-num">45</span><span><strong>Return</strong> — Process a return from Order History: select or scan the order, click Return Items, enter Manager PIN, scan item QR codes, select return reason, choose Credit or Cash refund, and Complete Return.</span></li>
+      <li><span class="list-bullet bullet-num">46</span><span><strong>Exchange</strong> — Process an exchange from Order History: click Exchange Items, enter Manager PIN, scan items to return with a reason per item, scan replacement items (same SKU and batch only), and Confirm Exchange.</span></li>
+      <li><span class="list-bullet bullet-num">47</span><span><strong>Complete Weedmaps Pickup Order</strong> — Select Pickup, choose the customer's order tile, add products, notify the customer (text + email), confirm notification, locate the customer by phone with the blue pickup sticker, review the auto-populated cart, add any additional items, and process payment through Checkout.</span></li>
     </ul>
 
     <div class="section-label">Tote Configuration — SOP 47</div>
     <ul class="policy-list">
-      <li><span class="list-bullet bullet-num">47</span><span><strong>Driver Tote Menu Configuration (New Menu)</strong> — Totes → Create/Configure → Create Tote Config → select Store and Zone → add products (minimum one required) → assign each product to a tote pocket → set quantities → Save.</span></li>
+      <li><span class="list-bullet bullet-num">48</span><span><strong>Driver Tote Menu Configuration (New Menu)</strong> — Totes → Create/Configure → Create Tote Config → select Store and Zone → add products (minimum one required) → assign each product to a tote pocket → set quantities → Save.</span></li>
     </ul>
 
     <div class="section-label">Dispatch Configuration — SOP 48</div>
     <ul class="policy-list">
-      <li><span class="list-bullet bullet-num">48</span><span><strong>Scheduled Order Filter (Add / Edit)</strong> — Configuration → Scheduled Filter Config → Add Filter → name the filter → select zones → set order time window and driver start time → Save. Apply in Shipping & Dispatch → Slotted Deliveries → Filters → select filter name and zones → Apply.</span></li>
+      <li><span class="list-bullet bullet-num">49</span><span><strong>Scheduled Order Filter (Add / Edit)</strong> — Configuration → Scheduled Filter Config → Add Filter → name the filter → select zones → set order time window and driver start time → Save. Apply in Shipping & Dispatch → Slotted Deliveries → Filters → select filter name and zones → Apply.</span></li>
     </ul>
 
     <div class="section-label">E-Commerce Content — SOPs 49–53</div>
     <ul class="policy-list">
-      <li><span class="list-bullet bullet-num">49</span><span><strong>Homepage Banner (Add)</strong> — E-Commerce → Homepage → +Banner → fill all required fields → Save.</span></li>
-      <li><span class="list-bullet bullet-num">50</span><span><strong>FAQ (Add / Edit)</strong> — E-Commerce → Pages → FAQ edit tool → add or remove Q&A items → Submit.</span></li>
-      <li><span class="list-bullet bullet-num">51</span><span><strong>Privacy Policy (Add / Edit)</strong> — E-Commerce → Pages → Privacy Policy action tool → edit content → Submit.</span></li>
-      <li><span class="list-bullet bullet-num">52</span><span><strong>Terms and Conditions (Edit)</strong> — E-Commerce → Pages → Terms and Conditions action tool → edit content → Submit.</span></li>
-      <li><span class="list-bullet bullet-num">53</span><span><strong>Create Product Groups / Create Product Deals</strong> — Products → Groups → Create Product Groups → apply Rules filters → Save → wait for Active status. Then Promotions → Deals → New Campaign → Product Discounts → set name, dates, recurrence → select product group → enter discount % → Create Campaign.</span></li>
+      <li><span class="list-bullet bullet-num">50</span><span><strong>Homepage Banner (Add)</strong> — E-Commerce → Homepage → +Banner → fill all required fields → Save.</span></li>
+      <li><span class="list-bullet bullet-num">51</span><span><strong>FAQ (Add / Edit)</strong> — E-Commerce → Pages → FAQ edit tool → add or remove Q&A items → Submit.</span></li>
+      <li><span class="list-bullet bullet-num">52</span><span><strong>Privacy Policy (Add / Edit)</strong> — E-Commerce → Pages → Privacy Policy action tool → edit content → Submit.</span></li>
+      <li><span class="list-bullet bullet-num">53</span><span><strong>Terms and Conditions (Edit)</strong> — E-Commerce → Pages → Terms and Conditions action tool → edit content → Submit.</span></li>
+      <li><span class="list-bullet bullet-num">54</span><span><strong>Create Product Groups / Create Product Deals</strong> — Products → Groups → Create Product Groups → apply Rules filters → Save → wait for Active status. Then Promotions → Deals → New Campaign → Product Discounts → set name, dates, recurrence → select product group → enter discount % → Create Campaign.</span></li>
     </ul>
 
     <div class="section-label">Training Videos</div>
@@ -1623,7 +1618,7 @@
 <!-- ══════ BIN MANAGE ══════ -->
 <div id="page-bin-manage" class="page">
   <div class="page-header page-header-inventory">
-    <div class="page-eyebrow">Tote &amp; Inventory</div>
+    <div class="page-eyebrow">Tote &amp; Inventory &middot; SOP 17</div>
     <h2 class="page-title">Bin Management: Add or Remove Master Pack</h2>
     <p class="page-desc">How to add a Master Pack to a bin, remove a Master Pack from a bin, and manage binned masterpacks through the Masterpack Listing view.</p>
   </div>
@@ -1856,16 +1851,16 @@
     <ul class="policy-list">
       <li><span class="list-bullet bullet-num">15</span><span>Review the <strong>Pick List</strong> showing all items needed to restock the tote.</span></li>
       <li><span class="list-bullet bullet-num">16</span><span>Scan each item's barcode as it is placed into the tote.</span></li>
-      <li><span class="list-bullet bullet-num">17</span><span>Monitor the <strong>Pick List Status bar</strong> — continue until it reaches <strong>100%.</strong></span></li>
-      <li><span class="list-bullet bullet-num">18</span><span>Click <strong>Next</strong> to advance to Step 4.</span></li>
+      <li><span class="list-bullet bullet-num">18</span><span>Monitor the <strong>Pick List Status bar</strong> — continue until it reaches <strong>100%.</strong></span></li>
+      <li><span class="list-bullet bullet-num">19</span><span>Click <strong>Next</strong> to advance to Step 4.</span></li>
     </ul>
     <div class="amber-box"><p><strong>Always verify the item matches the pick list before scanning.</strong> Scanning the wrong barcode during replenishment will corrupt the tote's inventory record.</p></div>
 
     <div class="policy-title">Step 4: Final Review & Completion</div>
     <ul class="policy-list">
-      <li><span class="list-bullet bullet-num">19</span><span>Perform a final visual review of all items now in the tote.</span></li>
-      <li><span class="list-bullet bullet-num">20</span><span>Scan or type in the <strong>Tote Code</strong> to confirm.</span></li>
-      <li><span class="list-bullet bullet-num">21</span><span>Click <strong>Complete</strong> to finalize the process.</span></li>
+      <li><span class="list-bullet bullet-num">20</span><span>Perform a final visual review of all items now in the tote.</span></li>
+      <li><span class="list-bullet bullet-num">21</span><span>Scan or type in the <strong>Tote Code</strong> to confirm.</span></li>
+      <li><span class="list-bullet bullet-num">22</span><span>Click <strong>Complete</strong> to finalize the process.</span></li>
     </ul>
 
     <div class="section-label">Common Mistakes to Avoid</div>
@@ -3621,7 +3616,7 @@
 <!-- ══════ WELCOME FLAG ══════ -->
 <div id="page-welcome-flag" class="page">
   <div class="page-header page-header-pos">
-    <div class="page-eyebrow">Welcome App · SOP 17</div>
+    <div class="page-eyebrow">Welcome App · SOP 18</div>
     <h2 class="page-title">Adding a Flag to a Customer Profile</h2>
     <p class="page-desc">How to flag a customer in the Welcome App for incidents involving theft, violence, property destruction, or other concerns — with reason, description, priority level, and full flag history.</p>
   </div>
@@ -3727,7 +3722,7 @@
 <!-- ══════ WELCOME LOGIN ══════ -->
 <div id="page-welcome-login" class="page">
   <div class="page-header page-header-pos">
-    <div class="page-eyebrow">Welcome App · SOP 18</div>
+    <div class="page-eyebrow">Welcome App · SOP 19</div>
     <h2 class="page-title">Log-in & Check-in Flow</h2>
     <p class="page-desc">How to log in to the Welcome App, navigate the customer waiting queue, add a client from search, and verify their identity by scanning their ID document.</p>
   </div>
@@ -3829,7 +3824,7 @@
 <!-- ══════ WELCOME CUSTOMER ══════ -->
 <div id="page-welcome-customer" class="page">
   <div class="page-header page-header-pos">
-    <div class="page-eyebrow">Welcome App · SOP 19</div>
+    <div class="page-eyebrow">Welcome App · SOP 20</div>
     <h2 class="page-title">Customer: Look Up, Add & Remove</h2>
     <p class="page-desc">How to add a customer to the queue by scanning their ID, select their purpose of visit, search by name, and remove a customer from the queue with a documented reason.</p>
   </div>
@@ -3949,7 +3944,7 @@
 <!-- ══════ WELCOME MEDICAL ══════ -->
 <div id="page-welcome-medical" class="page">
   <div class="page-header page-header-pos">
-    <div class="page-eyebrow">Welcome App · SOP 20</div>
+    <div class="page-eyebrow">Welcome App · SOP 21</div>
     <h2 class="page-title">Adding/Editing Medical Info</h2>
     <p class="page-desc">How to add, edit, and attach medical recommendation information to a customer profile in the Welcome App — including medical type, ID number, and expiration date.</p>
   </div>
@@ -4037,7 +4032,7 @@
 <!-- ══════ WELCOME EDIT PROFILE ══════ -->
 <div id="page-welcome-edit-profile" class="page">
   <div class="page-header page-header-pos">
-    <div class="page-eyebrow">Welcome App · SOP 21</div>
+    <div class="page-eyebrow">Welcome App · SOP 22</div>
     <h2 class="page-title">Edit Customer Profile</h2>
     <p class="page-desc">How to access and update a customer's profile information in the Welcome App — phone number, email, name, gender, and date of birth.</p>
   </div>
@@ -4666,7 +4661,7 @@
 <!-- ══════ CONFIGURE PRINTER ══════ -->
 <div id="page-configure-printer" class="page">
   <div class="page-header page-header-pos">
-    <div class="page-eyebrow">Budtender POS · SOP 39</div>
+    <div class="page-eyebrow">Budtender POS · SOP 40</div>
     <h2 class="page-title">Configure Printer Connections</h2>
     <p class="page-desc">How to set up printer and scanner connections in the Budtender POS — link, discover, and test printers to ensure proper functionality.</p>
   </div>
@@ -4747,7 +4742,7 @@
 <!-- ══════ RETURN ══════ -->
 <div id="page-return" class="page">
   <div class="page-header page-header-pos">
-    <div class="page-eyebrow">Budtender POS · SOP 40</div>
+    <div class="page-eyebrow">Budtender POS · SOP 41</div>
     <h2 class="page-title">Return</h2>
     <p class="page-desc">How to process a return transaction in the Budtender POS — locate the original order, scan items, select a return reason, and choose credit or cash.</p>
   </div>
@@ -4837,7 +4832,7 @@
 <!-- ══════ EXCHANGE ══════ -->
 <div id="page-exchange" class="page">
   <div class="page-header page-header-pos">
-    <div class="page-eyebrow">Budtender POS · SOP 41</div>
+    <div class="page-eyebrow">Budtender POS · SOP 42</div>
     <h2 class="page-title">Exchange</h2>
     <p class="page-desc">How to process an exchange transaction in the Budtender POS — scan items to return, select reasons, then scan the replacement items from the same SKU and batch.</p>
   </div>
@@ -4923,7 +4918,7 @@
 <!-- ══════ WEEDMAPS PICKUP ══════ -->
 <div id="page-weedmaps-pickup" class="page">
   <div class="page-header page-header-pos">
-    <div class="page-eyebrow">Budtender POS · SOP 44</div>
+    <div class="page-eyebrow">Budtender POS · SOP 45</div>
     <h2 class="page-title">Complete Weedmaps Pickup Order</h2>
     <p class="page-desc">How to process a Weedmaps pickup order in the Budtender POS — manage the order, add products, notify the customer, and complete payment.</p>
   </div>
@@ -5014,7 +5009,7 @@
 <!-- ══════ DRIVER NEW USER ══════ -->
 <div id="page-driver-new-user" class="page">
   <div class="page-header page-header-dispatch">
-    <div class="page-eyebrow">Driver App · SOP 19</div>
+    <div class="page-eyebrow">Driver App · SOP 20</div>
     <h2 class="page-title">(New User) Register, Login & Start Shift</h2>
     <p class="page-desc">How to register as a new driver, log in to the Omnigreen Driver App, clock in, go online, and accept your first order.</p>
   </div>
@@ -5095,7 +5090,7 @@
 <!-- ══════ DRIVER EXISTING USER ══════ -->
 <div id="page-driver-existing-user" class="page">
   <div class="page-header page-header-dispatch">
-    <div class="page-eyebrow">Driver App · SOP 20</div>
+    <div class="page-eyebrow">Driver App · SOP 21</div>
     <h2 class="page-title">(Existing User) Login & Start Shift</h2>
     <p class="page-desc">How an existing driver logs in to the Omnigreen Driver App using OTP, clocks in, goes online, and accepts their first order.</p>
   </div>
@@ -5179,7 +5174,7 @@
 <!-- ══════ DRIVER RECEIVE PACK ══════ -->
 <div id="page-driver-receive-pack" class="page">
   <div class="page-header page-header-dispatch">
-    <div class="page-eyebrow">Driver App · SOP 21</div>
+    <div class="page-eyebrow">Driver App · SOP 22</div>
     <h2 class="page-title">Process: Receive & Pack Order</h2>
     <p class="page-desc">How to accept an incoming order, verify the customer, select the exit bag, scan or type Master Pack numbers to pack the tote, and complete the delivery.</p>
   </div>
@@ -5267,7 +5262,7 @@
 <!-- ══════ DRIVER ROUTE TO HUB ══════ -->
 <div id="page-driver-route-hub" class="page">
   <div class="page-header page-header-dispatch">
-    <div class="page-eyebrow">Driver App · SOP 22</div>
+    <div class="page-eyebrow">Driver App · SOP 23</div>
     <h2 class="page-title">Route to Hub (End Shift)</h2>
     <p class="page-desc">How to complete the Route to Hub (RTH) flow at the end of a shift — return cash and totes, then clock out of the Driver App.</p>
   </div>
@@ -5334,7 +5329,7 @@
 <!-- ══════ DRIVER TOTE CONFIG ══════ -->
 <div id="page-tote-config" class="page">
   <div class="page-header page-header-dispatch">
-    <div class="page-eyebrow">Backoffice · Admin · SOP 47</div>
+    <div class="page-eyebrow">Backoffice · Admin · SOP 48</div>
     <h2 class="page-title">Driver Tote Menu Configuration (New Menu)</h2>
     <p class="page-desc">How to create and configure a new driver tote menu in the Omnigreen Backoffice — set the store, zone, products, pocket assignments, quantities, and save.</p>
   </div>
@@ -5416,7 +5411,7 @@
 <!-- ══════ SCHEDULED ORDER FILTER ══════ -->
 <div id="page-scheduled-filter" class="page">
   <div class="page-header page-header-dispatch">
-    <div class="page-eyebrow">Backoffice · Configuration · SOP 48</div>
+    <div class="page-eyebrow">Backoffice · Configuration · SOP 49</div>
     <h2 class="page-title">Scheduled Order Filter (Add / Edit)</h2>
     <p class="page-desc">How to create or edit a scheduled order filter in Omnigreen — set the filter name, zones, order time window, and driver start time, then apply it in Slotted Deliveries.</p>
   </div>
@@ -5495,7 +5490,7 @@
 <!-- ══════ HOMEPAGE BANNER ══════ -->
 <div id="page-homepage-banner" class="page">
   <div class="page-header" style="background:#1a1a2e;">
-    <div class="page-eyebrow">Backoffice · E-Commerce · SOP 49</div>
+    <div class="page-eyebrow">Backoffice · E-Commerce · SOP 50</div>
     <h2 class="page-title">E-Commerce: Homepage Banner (Add)</h2>
     <p class="page-desc">How to add a homepage banner to the Omnigreen e-commerce site — navigate to E-Commerce → Homepage, add the banner, fill all required fields, and save.</p>
   </div>
@@ -5554,7 +5549,7 @@
 <!-- ══════ FAQ ══════ -->
 <div id="page-faq" class="page">
   <div class="page-header" style="background:#1a1a2e;">
-    <div class="page-eyebrow">Backoffice · E-Commerce · SOP 50</div>
+    <div class="page-eyebrow">Backoffice · E-Commerce · SOP 51</div>
     <h2 class="page-title">E-Commerce: FAQ (Add / Edit)</h2>
     <p class="page-desc">How to add or edit the FAQ page on the Omnigreen e-commerce site — access E-Commerce → Pages, open the FAQ edit tool, add or remove questions, and submit.</p>
   </div>
@@ -5611,7 +5606,7 @@
 <!-- ══════ PRIVACY POLICY ══════ -->
 <div id="page-privacy-policy" class="page">
   <div class="page-header" style="background:#1a1a2e;">
-    <div class="page-eyebrow">Backoffice · E-Commerce · SOP 51</div>
+    <div class="page-eyebrow">Backoffice · E-Commerce · SOP 52</div>
     <h2 class="page-title">E-Commerce: Privacy Policy (Add / Edit)</h2>
     <p class="page-desc">How to add or edit the Privacy Policy on the Omnigreen e-commerce site — access E-Commerce → Pages, open the Privacy Policy edit tool, update the content, and submit.</p>
   </div>
@@ -5665,7 +5660,7 @@
 <!-- ══════ TERMS AND CONDITIONS ══════ -->
 <div id="page-terms-conditions" class="page">
   <div class="page-header" style="background:#1a1a2e;">
-    <div class="page-eyebrow">Backoffice · E-Commerce · SOP 52</div>
+    <div class="page-eyebrow">Backoffice · E-Commerce · SOP 53</div>
     <h2 class="page-title">E-Commerce: Terms and Conditions (Edit)</h2>
     <p class="page-desc">How to edit the Terms and Conditions page on the Omnigreen e-commerce site — access E-Commerce → Pages, open the action tool, edit the content, and submit.</p>
   </div>
@@ -5719,7 +5714,7 @@
 <!-- ══════ PRODUCT GROUPS & DEALS ══════ -->
 <div id="page-product-groups" class="page">
   <div class="page-header" style="background:#1a1a2e;">
-    <div class="page-eyebrow">Backoffice · Products · SOP 53</div>
+    <div class="page-eyebrow">Backoffice · Products · SOP 54</div>
     <h2 class="page-title">Create Product Groups & Product Deals</h2>
     <p class="page-desc">How to create product groups using rule-based filters, then build a promotional deal campaign linked to those groups — including discount percentage, date range, and recurrence.</p>
   </div>
@@ -6630,18 +6625,18 @@
       <div class="video-category-header">
         <div class="video-category-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 6h12l-1.5 7H3.5L2 6z" stroke="white" stroke-width="1.4" stroke-linejoin="round"/><path d="M1 3h14" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg></div>
         <div class="video-category-title">Budtender POS</div>
-        <span class="video-category-count">10 guides</span>
+        <span class="video-category-count">9 guides</span>
       </div>
       <div class="vguide-grid">
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/ozfW7bYDXR8GDdEeWrUrY5" data-unverified="true" target="_blank" rel="noopener">
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/5gZ3Lf8E1gVNe5sXLVZmuB" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
           <div class="vguide-body">
             <div class="vguide-tag">Budtender POS</div>
             <div class="vguide-title">See Queue Line: View All Customer Functions at Register</div>
-            <div class="vguide-desc">View the full customer queue and all available register functions.</div>
-            
+            <div class="vguide-desc">Save &amp; Close to view the queue, access customer profile, notes, and order history from the register, then return to cart or abandon with a reason.</div>
+            <div class="vguide-steps"><span class="vstep">1 Save &amp; Close</span><span class="vstep">2 View Queue</span><span class="vstep">3 Customer Profile</span><span class="vstep">4 Edit Profile</span><span class="vstep">5 Notes</span><span class="vstep">6 View Notes</span><span class="vstep">7 Order History</span><span class="vstep">8 Orders</span><span class="vstep">9 Return to Register</span><span class="vstep">10 Back to Cart</span><span class="vstep">11 Abandon Cart</span><span class="vstep">12 Reason &amp; Confirm</span></div>
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
@@ -6681,27 +6676,16 @@
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/kwDrnCxXgiiQRG4Lvs8Xs5" data-unverified="true" target="_blank" rel="noopener">
-          <div class="vguide-thumb" style="background:#111;">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
-          </div>
-          <div class="vguide-body">
-            <div class="vguide-tag">Budtender POS</div>
-            <div class="vguide-title">Build Cart Using Filters and Add to Cart</div>
-            <div class="vguide-desc">Use product filters to build a customer's cart in the POS.</div>
-            
-            <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          </div>
-        </a>
-        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/2B44uqMeYhswbXJnbDXVJ2" data-unverified="true" target="_blank" rel="noopener">
+
+        <a class="vguide-card" href="https://app.guidde.com/share/playbooks/dEMHn4LEpjtuAH37RpsuGs" target="_blank" rel="noopener">
           <div class="vguide-thumb" style="background:#111;">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="17" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><polygon points="14,10 28,18 14,26" fill="rgba(255,255,255,0.8)"/></svg>
           </div>
           <div class="vguide-body">
             <div class="vguide-tag">Budtender POS</div>
             <div class="vguide-title">Discounts, Loyalty Points & Clear Cart</div>
-            <div class="vguide-desc">Add discounts and loyalty points at a register and clear the cart when needed.</div>
-            
+            <div class="vguide-desc">Apply manual discounts ($ or %), promo codes, and store credit (loyalty) to a register cart — plus view and remove applied discounts.</div>
+            <div class="vguide-steps"><span class="vstep">1 Add Discount</span><span class="vstep">2 Manual Discount</span><span class="vstep">3 $ Discount + Note</span><span class="vstep">4 % Discount</span><span class="vstep">5 Enter %</span><span class="vstep">6 Apply Coupon</span><span class="vstep">7 Apply Promo</span><span class="vstep">8 Actions</span><span class="vstep">9 Wallet Credit</span><span class="vstep">10 Credit Amount</span><span class="vstep">11 Apply</span><span class="vstep">12 Actions</span><span class="vstep">13 View Applied</span></div>
             <div class="vguide-cta">Open guide <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1 9L9 1M9 1H4M9 1V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           </div>
         </a>
